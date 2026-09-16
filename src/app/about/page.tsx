@@ -1,5 +1,6 @@
 "use client";
 
+import { assetPath } from "@/lib/utils";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -35,7 +36,7 @@ export default function AboutPage() {
           className="w-full h-[60vh] rounded-[2rem] overflow-hidden shadow-2xl relative"
         >
           <img 
-            src="/scraped_img_1.jpg" 
+            src={assetPath("/scraped_img_1.jpg")} 
             alt="Inside our state-of-the-art clinic" 
             className="w-full h-full object-cover"
           />
@@ -55,7 +56,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="w-full md:w-5/12 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl shrink-0">
               <img 
-                src="/scraped_img_2.jpg" 
+                src={assetPath("/scraped_img_2.jpg")} 
                 alt="Dr. Archana Raj Jha" 
                 className="w-full h-full object-cover"
               />

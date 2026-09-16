@@ -1,5 +1,6 @@
 "use client";
 
+import { assetPath } from "@/lib/utils";
 import { Sparkles, ShieldCheck, Activity, ArrowRight } from "lucide-react";
 import DentalArcLogo from "@/components/ui/DentalArcLogo";
 import Link from "next/link";
@@ -95,7 +96,7 @@ export default function ServicesPage() {
                 className={`order-1 ${idx % 2 === 1 ? 'lg:order-2' : 'lg:order-1'} w-full h-[600px] rounded-[2rem] overflow-hidden shadow-2xl relative`}
               >
                 <img 
-                  src={section.img} 
+                  src={assetPath(section.img)} 
                   alt={section.category}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
                 />

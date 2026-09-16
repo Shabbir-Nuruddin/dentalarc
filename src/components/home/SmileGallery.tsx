@@ -1,67 +1,110 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Star, MapPin } from "lucide-react";
 import Link from "next/link";
+import { assetPath } from "@/lib/utils";
 
 const cases = [
   {
-    title: "Porcelain Veneers",
-    patient: "Sarah, 34",
-    img: "/scraped_img_3.jpg",
-    desc: "Corrected severe spacing and discoloration with 8 custom-layered porcelain veneers.",
+    treatment: "Zirconia Crown Restoration",
+    patient: "Saurabh Rawat",
+    review: "Replaced old ceramic crown with monolithic zirconia. Bite and aesthetics feel completely natural.",
+    img: "/scraped_img_4.jpg",
+    tag: "Restorative"
   },
   {
-    title: "Full Arch Implants",
-    patient: "Michael, 58",
-    img: "/scraped_img_4.jpg",
-    desc: "Restored chewing function and confidence with a fixed implant-supported bridge.",
+    treatment: "Dual Dental Implants",
+    patient: "Ankit Jangra Milkpuria",
+    review: "Both implants placed in a single visit without pain or swelling. Truly grateful for Dr. Archana's care.",
+    img: "/scraped_img_5.jpg",
+    tag: "Implantology"
+  },
+  {
+    treatment: "Canine Replacement & Alignment",
+    patient: "Apoorwa Dutt",
+    review: "Astonished with the final aesthetic result after missing canine treatment. Flawless outcome.",
+    img: "/scraped_img_1.jpg",
+    tag: "Cosmetic"
+  },
+  {
+    treatment: "Painless Multi-Canal RCT",
+    patient: "Amit Mishra",
+    review: "Completely pain-free root canal and perfectly fitted crown. No discomfort or sensitivity.",
+    img: "/clinic-hero.jpg",
+    tag: "Endodontics"
   }
 ];
 
 export default function SmileGallery() {
   return (
-    <section className="py-32 bg-slate-50">
-      <div className="layout-container">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-          <div className="max-w-2xl">
-            <h2 className="text-sm font-bold tracking-widest uppercase text-primary-600 mb-4">Patient Transformations</h2>
-            <h3 className="text-4xl md:text-5xl font-bold tracking-tighter text-slate-900 leading-[1.1]">
-              Real results. <br/> Life-changing smiles.
-            </h3>
+    <section className="py-28 bg-slate-900 text-white overflow-hidden">
+      <div className="layout-container max-w-7xl">
+        
+        {/* Editorial Section Header */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 pb-8 border-b border-slate-800 gap-6">
+          <div>
+            <span className="text-xs font-mono font-bold tracking-widest uppercase text-primary-400 block mb-2">
+              Evidence-Based Outcomes
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+              Documented Patient Transformations
+            </h2>
           </div>
-          <Link href="/services" className="inline-flex items-center gap-2 font-semibold text-primary-600 hover:text-primary-700 transition-colors">
-            View all cases <ArrowRight className="w-5 h-5" />
-          </Link>
+          <a 
+            href="https://www.google.com/maps/place/DENTAL+ARC+%7C+Dental+Clinic+In+Sector+70+Gurgaon%7CDentist+%7C+RCT+%7C+Implants+Treatment+in+Sector+69+Gurugram%7C+Dr.Archana+Raj+Jha/@28.395294,77.030255,17z"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-primary-400 hover:text-primary-300 transition-colors"
+          >
+            <span>Read all 100+ Verified Patient Reviews on Google</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Minimalist Visual Grid - Clean Lines, Architectural Spacing */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {cases.map((c, i) => (
-            <motion.div 
+            <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: i * 0.2 }}
-              className="group relative rounded-[2rem] overflow-hidden bg-white border border-slate-200 shadow-lg hover:shadow-2xl transition-all"
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="group flex flex-col justify-between border-t border-slate-800 pt-6"
             >
-              <div className="aspect-[4/3] overflow-hidden relative">
-                <img 
-                  src={c.img} 
-                  alt={c.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-slate-900">
-                  {c.title}
+              <div>
+                <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-800 relative mb-5">
+                  <img
+                    src={assetPath(c.img)}
+                    alt={c.treatment}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md px-2.5 py-1 rounded text-[10px] font-mono uppercase tracking-wider text-primary-400 border border-white/10">
+                    {c.tag}
+                  </div>
                 </div>
+
+                <h3 className="text-lg font-bold text-white tracking-tight mb-1">
+                  {c.treatment}
+                </h3>
+                <p className="text-xs text-slate-400 font-light leading-relaxed mb-4">
+                  "{c.review}"
+                </p>
               </div>
-              <div className="p-8">
-                <h4 className="text-2xl font-bold text-slate-900 mb-2">{c.patient}</h4>
-                <p className="text-slate-600 leading-relaxed font-light">{c.desc}</p>
+
+              <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                <span className="font-medium text-slate-300">{c.patient}</span>
+                <div className="flex text-amber-400 gap-0.5">
+                  {[...Array(5)].map((_, idx) => (
+                    <Star key={idx} className="w-3 h-3 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

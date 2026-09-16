@@ -1,5 +1,6 @@
 "use client";
 
+import { assetPath } from "@/lib/utils";
 import { motion } from "motion/react";
 
 const techList = [
@@ -57,7 +58,7 @@ export default function Technology() {
             className="w-full h-[700px] rounded-[3rem] overflow-hidden shadow-2xl relative"
           >
             <img 
-              src="/scraped_img_5.jpg" 
+              src={assetPath("/scraped_img_5.jpg")} 
               alt="Advanced Dental Technology" 
               className="w-full h-full object-cover"
             />

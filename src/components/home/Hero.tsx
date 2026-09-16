@@ -5,6 +5,8 @@ import { Star } from "lucide-react";
 import { useRef } from "react";
 import PremiumButton from "@/components/ui/PremiumButton";
 
+import { assetPath } from "@/lib/utils";
+
 // Staggered text animation variants
 const container = {
   hidden: { opacity: 0 },
@@ -15,8 +17,8 @@ const container = {
 };
 
 const item = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] as const } }
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] as const } }
 };
 
 export default function Hero() {
@@ -26,19 +28,31 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
   
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden bg-slate-900">
+    <section ref={ref} className="relative min-h-[100dvh] flex items-center overflow-hidden bg-slate-950">
+      {/* Cinematic Full-Bleed Video Background */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-slate-900/40 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10" />
-        <img 
-          src="/clinic-hero.jpg" 
-          alt="Modern Dental Clinic" 
+        <div className="absolute inset-0 bg-slate-950/60 backdrop-brightness-75 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent z-10" />
+        
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          poster={assetPath("/clinic-actual-1.jpg")}
           className="w-full h-full object-cover object-center scale-105"
-        />
+        >
+          <source src={assetPath("/dental-hero.mp4")} type="video/mp4" />
+          <img 
+            src={assetPath("/clinic-actual-1.jpg")} 
+            alt="Dental Arc Clinic Interior" 
+            className="w-full h-full object-cover object-center"
+          />
+        </video>
       </motion.div>
       
       <div className="layout-container relative z-20 w-full pt-32 pb-20">
