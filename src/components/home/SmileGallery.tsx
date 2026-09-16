@@ -1,107 +1,85 @@
 "use client";
 
-import { motion } from "motion/react";
-import { ArrowRight, Star, MapPin } from "lucide-react";
-import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { assetPath } from "@/lib/utils";
 
-const cases = [
+const outcomes = [
   {
-    treatment: "Zirconia Crown Restoration",
-    patient: "Saurabh Rawat",
-    review: "Replaced old ceramic crown with monolithic zirconia. Bite and aesthetics feel completely natural.",
+    title: "Zirconia Crown & Gum Restoration",
+    detail: "10 Days Post-Procedure Outcome",
+    desc: "Biological crown contours with complete gingival healing and natural aesthetic emergence.",
     img: "/clinic_clinical_case.jpg",
-    tag: "Restorative"
   },
   {
-    treatment: "Dual Dental Implants",
-    patient: "Ankit Jangra Milkpuria",
-    review: "Both implants placed in a single visit without pain or swelling. Truly grateful for Dr. Archana's care.",
-    img: "/clinic_happy_patient.jpg",
-    tag: "Implantology"
-  },
-  {
-    treatment: "Canine Replacement & Alignment",
-    patient: "Apoorwa Dutt",
-    review: "Astonished with the final aesthetic result after missing canine treatment. Flawless outcome.",
-    img: "/clinic_treatment_laser.jpg",
-    tag: "Cosmetic"
-  },
-  {
-    treatment: "Painless Multi-Canal RCT",
-    patient: "Amit Mishra",
-    review: "Completely pain-free root canal and perfectly fitted crown. No discomfort or sensitivity.",
+    title: "Aesthetic Smile Transformation",
+    detail: "Cosmetic Anterior Alignment",
+    desc: "Restoration of incisal symmetry and natural shade harmony without invasive enamel reduction.",
     img: "/dental_arc_clinic_9.jpg",
-    tag: "Endodontics"
+  },
+  {
+    title: "Laser Periodontal Therapy",
+    detail: "Clinical Operatory Case",
+    desc: "Diode laser debridement for localized inflammation, restoring healthy pink gingival margins.",
+    img: "/clinic_treatment_laser.jpg",
+  },
+  {
+    title: "Implant Consultation & Fitment",
+    detail: "Complete Rehabilitation",
+    desc: "Stable dental implant placement restoring full masticatory function and patient confidence.",
+    img: "/clinic_happy_patient.jpg",
   }
 ];
 
 export default function SmileGallery() {
   return (
-    <section className="py-28 bg-slate-900 text-white overflow-hidden">
-      <div className="layout-container max-w-7xl">
+    <section className="py-24 bg-white border-b border-slate-200">
+      <div className="layout-container">
         
-        {/* Editorial Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 pb-8 border-b border-slate-800 gap-6">
-          <div>
-            <span className="text-xs font-mono font-bold tracking-widest uppercase text-primary-400 block mb-2">
-              Evidence-Based Outcomes
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
-              Documented Patient Transformations
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between pb-10 mb-12 border-b border-slate-200 gap-6">
+          <div className="max-w-2xl space-y-2">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+              Clinical Case Evidence
             </h2>
+            <p className="text-slate-600 text-base">
+              Documented treatment outcomes from our Gurugram practice.
+            </p>
           </div>
-          <a 
+
+          <a
             href="https://www.google.com/maps/place/DENTAL+ARC+%7C+Dental+Clinic+In+Sector+70+Gurgaon%7CDentist+%7C+RCT+%7C+Implants+Treatment+in+Sector+69+Gurugram%7C+Dr.Archana+Raj+Jha/@28.395294,77.030255,17z"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-primary-400 hover:text-primary-300 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary-700 hover:text-primary-800 transition-colors"
           >
-            <span>Read all 100+ Verified Patient Reviews on Google</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>Verified Patient Outcomes on Google</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>
 
-        {/* Minimalist Visual Grid - Clean Lines, Architectural Spacing */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {cases.map((c, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group flex flex-col justify-between border-t border-slate-800 pt-6"
-            >
-              <div>
-                <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-800 relative mb-5">
-                  <img
-                    src={assetPath(c.img)}
-                    alt={c.treatment}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md px-2.5 py-1 rounded text-[10px] font-mono uppercase tracking-wider text-primary-400 border border-white/10">
-                    {c.tag}
-                  </div>
+        {/* 4-Image Editorial Strip - Clean lines, NO Card Containers */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {outcomes.map((item, idx) => (
+            <div key={idx} className="space-y-3">
+              <div className="aspect-[4/3] w-full overflow-hidden rounded-sm bg-slate-100 border border-slate-200">
+                <img
+                  src={assetPath(item.img)}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="space-y-1">
+                <div className="text-[11px] font-semibold text-primary-700 uppercase tracking-wide">
+                  {item.detail}
                 </div>
-
-                <h3 className="text-lg font-bold text-white tracking-tight mb-1">
-                  {c.treatment}
+                <h3 className="text-base font-bold text-slate-900">
+                  {item.title}
                 </h3>
-                <p className="text-xs text-slate-400 font-light leading-relaxed mb-4">
-                  "{c.review}"
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  {item.desc}
                 </p>
               </div>
-
-              <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
-                <span className="font-medium text-slate-300">{c.patient}</span>
-                <div className="flex text-amber-400 gap-0.5">
-                  {[...Array(5)].map((_, idx) => (
-                    <Star key={idx} className="w-3 h-3 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 

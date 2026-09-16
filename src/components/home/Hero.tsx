@@ -1,120 +1,89 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Star, MapPin, Phone, ShieldCheck, Play, ArrowUpRight, CheckCircle2, Clock } from "lucide-react";
-import { useState } from "react";
+import { Star, ArrowUpRight, Phone, MapPin } from "lucide-react";
 import { assetPath } from "@/lib/utils";
 import Link from "next/link";
 
 export default function Hero() {
-  const [isPlayingVideo, setIsPlayingVideo] = useState(true);
-
   return (
-    <section className="relative min-h-[92vh] pt-24 pb-16 flex items-center overflow-hidden bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white">
-      {/* Background Video Loop with Subtle Cinematic Scrim */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {isPlayingVideo && (
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover opacity-25 scale-105 transition-opacity duration-1000"
-          >
-            <source src={assetPath("/dental-hero.mp4")} type="video/mp4" />
-          </video>
-        )}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/40" />
+    <section className="relative min-h-[90vh] pt-24 pb-16 flex items-center bg-slate-950 text-white overflow-hidden">
+      {/* Background Video Layer */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-20 scale-105"
+        >
+          <source src={assetPath("/dental-hero.mp4")} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
       </div>
 
-      <div className="layout-container relative z-10 py-8 lg:py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="layout-container relative z-10 py-6 lg:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Clinic Introduction and Direct Trust Badges */}
-          <div className="lg:col-span-7 flex flex-col items-start space-y-6">
+          {/* Left Column: Editorial Headline & Actions */}
+          <div className="lg:col-span-7 space-y-6">
             
-            {/* Real Google Rating Pill */}
-            <motion.a
-              href="https://www.google.com/maps/place/DENTAL+ARC+%7C+Dental+Clinic+In+Sector+70+Gurgaon%7CDentist+%7C+RCT+%7C+Implants+Treatment+in+Sector+69+Gurugram%7C+Dr.Archana+Raj+Jha/@28.395294,77.030255,17z/data=!4m15!1m7!3m6!1s0x390d2308072eed75:0xdf3be68ea474d7bc!2sDENTAL+ARC+%7C+Dental+Clinic+In+Sector+70+Gurgaon%7CDentist+%7C+RCT+%7C+Implants+Treatment+in+Sector+69+Gurugram%7C+Dr.Archana+Raj+Jha!8m2!3d28.395294!4d77.030255!16s%2Fg%2F11t9qzcjv5!3m6!1s0x390d2308072eed75:0xdf3be68ea474d7bc!8m2!3d28.395294!4d77.030255!10e5!16s%2Fg%2F11t9qzcjv5"
+            {/* Google Rating Line - Unboxed */}
+            <a
+              href="https://www.google.com/maps/place/DENTAL+ARC+%7C+Dental+Clinic+In+Sector+70+Gurgaon%7CDentist+%7C+RCT+%7C+Implants+Treatment+in+Sector+69+Gurugram%7C+Dr.Archana+Raj+Jha/@28.395294,77.030255,17z"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 backdrop-blur-md transition-all group cursor-pointer text-xs sm:text-sm"
+              className="inline-flex items-center gap-2.5 text-xs text-slate-300 hover:text-white transition-colors group"
             >
-              <div className="flex text-amber-400">
+              <div className="flex text-amber-400 gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3.5 h-3.5 fill-current" />
                 ))}
               </div>
-              <span className="font-semibold text-white">5.0 Star Rated on Google Maps</span>
-              <span className="text-white/60">|</span>
-              <span className="text-primary-300 group-hover:text-primary-200 flex items-center gap-1 font-medium">
-                Verified Clinic <ArrowUpRight className="w-3.5 h-3.5" />
+              <span className="font-semibold text-white">5.0 Star Rated on Google</span>
+              <span className="text-slate-500">•</span>
+              <span className="text-primary-400 group-hover:text-primary-300 flex items-center gap-1">
+                Verified Clinic <ArrowUpRight className="w-3 h-3" />
               </span>
-            </motion.a>
+            </a>
 
-            {/* Main Headline */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="space-y-4"
-            >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-white">
-                Precision Dentistry &{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 via-teal-200 to-primary-400">
-                  Implant Center
-                </span>
+            {/* Headline */}
+            <div className="space-y-4">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white leading-[1.1]">
+                Precision Dentistry &<br />
+                <span className="font-bold text-white">Implant Center</span>
               </h1>
-              <p className="text-lg sm:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed">
-                Led by <span className="text-white font-medium">Dr. Archana Raj Jha</span>, Dental Arc delivers painless root canal treatments, immediate dental implants, laser gum therapy, and smile designing across Sector 70 & Sector 65, Gurugram.
+              <p className="text-base sm:text-lg text-slate-300 max-w-xl font-normal leading-relaxed">
+                Led by Dr. Archana Raj Jha. Painless root canals, dental implants, and laser aesthetics across Sector 70 and Sector 65, Gurugram.
               </p>
-            </motion.div>
+            </div>
 
-            {/* Quick Key Highlights */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full max-w-xl text-xs sm:text-sm text-slate-300 pt-2"
-            >
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg p-2.5 backdrop-blur-sm">
-                <CheckCircle2 className="w-4 h-4 text-primary-400 shrink-0" />
-                <span>Painless RCT & Laser</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg p-2.5 backdrop-blur-sm">
-                <ShieldCheck className="w-4 h-4 text-teal-400 shrink-0" />
-                <span>0% EMI Available</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg p-2.5 backdrop-blur-sm col-span-2 sm:col-span-1">
-                <Clock className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Open 7 Days • Till 9 PM</span>
-              </div>
-            </motion.div>
+            {/* Understated Clinical Highlights Line - No Cards or Boxes */}
+            <div className="pt-1 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs sm:text-sm text-slate-300 font-medium">
+              <span>Painless Rotary RCT</span>
+              <span className="text-slate-600">•</span>
+              <span>Diode Laser Therapy</span>
+              <span className="text-slate-600">•</span>
+              <span>0% EMI Available</span>
+              <span className="text-slate-600">•</span>
+              <span>Open 7 Days till 9 PM</span>
+            </div>
 
-            {/* Call to Actions */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap items-center gap-4 pt-4 w-full sm:w-auto"
-            >
+            {/* Actions */}
+            <div className="flex flex-wrap items-center gap-4 pt-4">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary-600 hover:bg-primary-500 text-white font-semibold text-base shadow-lg shadow-primary-900/40 hover:shadow-primary-700/50 transition-all transform hover:-translate-y-0.5"
+                className="bg-primary-600 hover:bg-primary-500 text-white font-semibold text-sm px-8 py-3.5 rounded-full transition-all shadow-md shadow-primary-900/40"
               >
-                <span>Book Free Consultation</span>
-                <ArrowUpRight className="w-4 h-4" />
+                Book Consultation
               </Link>
 
               <a
                 href="tel:+917979927696"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-base backdrop-blur-md transition-all"
+                className="inline-flex items-center gap-2 text-slate-200 hover:text-white text-sm font-semibold px-6 py-3.5 rounded-full border border-slate-700 hover:border-slate-500 transition-all"
               >
-                <Phone className="w-4 h-4 text-primary-300" />
+                <Phone className="w-4 h-4 text-primary-400" />
                 <span>+91 79799 27696</span>
               </a>
 
@@ -122,70 +91,40 @@ export default function Hero() {
                 href="https://www.google.com/maps/dir//DENTAL+ARC+Spaze+Forum+Sector+70+Gurugram"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-slate-300 hover:text-white text-xs font-medium transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-200 transition-colors py-2"
               >
                 <MapPin className="w-3.5 h-3.5 text-primary-400" />
-                <span>Directions to Spaze Forum</span>
+                <span>Spaze Forum, Sector 70</span>
               </a>
-            </motion.div>
+            </div>
 
           </div>
 
-          {/* Right Column: High-Impact Authentic Clinic Photo Feature */}
+          {/* Right Column: Clean Architectural Photo Frame of the Operatory */}
           <div className="lg:col-span-5 relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative rounded-2xl overflow-hidden border border-white/15 bg-slate-800 shadow-2xl shadow-black/60 group"
-            >
-              {/* Primary Operatory Photo */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-900">
+            <div className="relative overflow-hidden rounded-lg border border-slate-800 bg-slate-900">
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
                 <img
                   src={assetPath("/clinic_operatory_overview.jpg")}
-                  alt="Dental Arc actual operatory and dental treatment chair in Sector 70 Gurgaon"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  alt="Dental Arc actual operatory suite in Sector 70 Gurgaon"
+                  className="w-full h-full object-cover"
                 />
-                
-                {/* Floating Live Badge */}
-                <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/20 rounded-full px-3 py-1 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-[11px] font-medium tracking-wide uppercase text-white">Actual Clinic Facility</span>
-                </div>
-
-                {/* Subtitle Bar at Bottom of Image */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4 text-white">
-                  <p className="text-sm font-semibold">Dental Arc Operatory Suite</p>
-                  <p className="text-xs text-slate-300">Spaze Forum F-115, Sector 70 Gurugram</p>
+                <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-sm px-3 py-1 rounded text-[10px] font-mono uppercase tracking-widest text-primary-300 border border-white/10">
+                  Actual Clinic Operatory
                 </div>
               </div>
 
-              {/* Inset Strip: Clinic Signboard & Consultation Room */}
-              <div className="grid grid-cols-2 gap-px bg-white/10 border-t border-white/15">
-                <div className="relative aspect-[16/9] overflow-hidden group/sub">
-                  <img
-                    src={assetPath("/clinic_exterior_signboard.jpg")}
-                    alt="Dental Arc physical clinic exterior signboard below Cult Fitness Gym"
-                    className="w-full h-full object-cover group-hover/sub:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-end p-2">
-                    <span className="text-[10px] font-medium text-white/90">Exterior Signboard</span>
-                  </div>
+              {/* Minimal Caption Strip */}
+              <div className="p-4 bg-slate-900 border-t border-slate-800 flex items-center justify-between text-xs">
+                <div>
+                  <p className="font-semibold text-white">Dental Arc Operatory Suite</p>
+                  <p className="text-slate-400 text-[11px]">Spaze Forum F-115, Sector 70 Gurugram</p>
                 </div>
-
-                <div className="relative aspect-[16/9] overflow-hidden group/sub">
-                  <img
-                    src={assetPath("/clinic_treatment_laser.jpg")}
-                    alt="Dr. Archana Raj Jha performing laser dentistry procedure"
-                    className="w-full h-full object-cover group-hover/sub:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-end p-2">
-                    <span className="text-[10px] font-medium text-white/90">Laser Treatment in Action</span>
-                  </div>
+                <div className="text-right">
+                  <span className="text-emerald-400 font-medium">Sterile Environment</span>
                 </div>
               </div>
-
-            </motion.div>
+            </div>
           </div>
 
         </div>
