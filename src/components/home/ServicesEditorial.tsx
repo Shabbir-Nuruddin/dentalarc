@@ -9,17 +9,17 @@ const services = [
   {
     title: "Root Canal Treatment (RCT)",
     description: "Experience completely pain-free root canal treatments with high-quality Zirconia crown fittings.",
-    img: "https://images.pexels.com/photos/3779760/pexels-photo-3779760.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200&dpr=2",
+    img: "/scraped_img_6.jpg",
   },
   {
     title: "General Care",
     description: "Comprehensive exams, cleanings, and preventive treatments to ensure lifelong oral health.",
-    img: "https://images.pexels.com/photos/384555/pexels-photo-384555.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200&dpr=2",
+    img: "/scraped_img_1.jpg",
   },
   {
     title: "Implants & Surgery",
     description: "Permanent solutions for missing teeth using advanced 3D imaging and painless surgical techniques.",
-    img: "https://images.pexels.com/photos/6502018/pexels-photo-6502018.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200&dpr=2",
+    img: "/scraped_img_2.jpg",
   }
 ];
 

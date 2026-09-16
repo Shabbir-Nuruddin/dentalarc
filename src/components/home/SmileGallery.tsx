@@ -8,13 +8,13 @@ const cases = [
   {
     title: "Porcelain Veneers",
     patient: "Sarah, 34",
-    img: "https://images.pexels.com/photos/6501995/pexels-photo-6501995.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
+    img: "/scraped_img_3.jpg",
     desc: "Corrected severe spacing and discoloration with 8 custom-layered porcelain veneers.",
   },
   {
     title: "Full Arch Implants",
     patient: "Michael, 58",
-    img: "https://images.pexels.com/photos/6501986/pexels-photo-6501986.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=2",
+    img: "/scraped_img_4.jpg",
     desc: "Restored chewing function and confidence with a fixed implant-supported bridge.",
   }
 ];

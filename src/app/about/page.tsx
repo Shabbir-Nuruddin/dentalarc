@@ -20,7 +20,7 @@ export default function AboutPage() {
             Dentistry rooted in <br/> compassion and craft.
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto font-light">
-            We started this clinic with a singular vision: to remove the fear and anxiety from the dental chair. By combining the world's most advanced technology with genuine human empathy, we don't just fix teeth—we restore confidence.
+            We started this clinic with a singular vision: to remove the fear and anxiety from the dental chair. By combining the world's most advanced technology with genuine human empathy, we don't just fix teeth - we restore confidence.
           </p>
         </motion.div>
       </div>
@@ -35,7 +35,7 @@ export default function AboutPage() {
           className="w-full h-[60vh] rounded-[2rem] overflow-hidden shadow-2xl relative"
         >
           <img 
-            src="https://images.pexels.com/photos/6502011/pexels-photo-6502011.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&dpr=2" 
+            src="/scraped_img_1.jpg" 
             alt="Inside our state-of-the-art clinic" 
             className="w-full h-full object-cover"
           />
@@ -55,7 +55,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="w-full md:w-5/12 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl shrink-0">
               <img 
-                src="https://images.pexels.com/photos/3259628/pexels-photo-3259628.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&dpr=2" 
+                src="/scraped_img_2.jpg" 
                 alt="Dr. Archana Raj Jha" 
                 className="w-full h-full object-cover"
               />

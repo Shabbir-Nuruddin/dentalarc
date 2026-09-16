@@ -8,7 +8,7 @@ const allServices = [
   {
     category: "General Dentistry",
     icon: <ShieldCheck className="w-8 h-8 text-primary-600" />,
-    img: "https://images.pexels.com/photos/384555/pexels-photo-384555.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200&dpr=2",
+    img: "/scraped_img_3.jpg",
     items: [
       { name: "Comprehensive Exams", desc: "Thorough checkups utilizing digital X-rays and 3D scanning." },
       { name: "Professional Cleanings", desc: "Preventative hygiene appointments to keep gums and teeth healthy." },
@@ -18,7 +18,7 @@ const allServices = [
   {
     category: "Cosmetic Procedures",
     icon: <Sparkles className="w-8 h-8 text-primary-600" />,
-    img: "https://images.pexels.com/photos/3779760/pexels-photo-3779760.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200&dpr=2",
+    img: "/scraped_img_4.jpg",
     items: [
       { name: "Porcelain Veneers", desc: "Custom-crafted shells to correct chips, gaps, or discoloration." },
       { name: "Teeth Whitening", desc: "Professional in-office whitening for a noticeably brighter smile." },
@@ -28,7 +28,7 @@ const allServices = [
   {
     category: "Restorative Care",
     icon: <Activity className="w-8 h-8 text-primary-600" />,
-    img: "https://images.pexels.com/photos/6502018/pexels-photo-6502018.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200&dpr=2",
+    img: "/scraped_img_5.jpg",
     items: [
       { name: "Dental Implants", desc: "Permanent, natural-looking replacements for missing teeth." },
       { name: "Crowns & Bridges", desc: "Durable ceramic restorations designed to blend seamlessly." },

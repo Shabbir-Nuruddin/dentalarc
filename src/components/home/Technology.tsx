@@ -57,7 +57,7 @@ export default function Technology() {
             className="w-full h-[700px] rounded-[3rem] overflow-hidden shadow-2xl relative"
           >
             <img 
-              src="https://images.pexels.com/photos/6502008/pexels-photo-6502008.jpeg?auto=compress&cs=tinysrgb&w=800&h=1200&dpr=2" 
+              src="/scraped_img_5.jpg" 
               alt="Advanced Dental Technology" 
               className="w-full h-full object-cover"
             />
