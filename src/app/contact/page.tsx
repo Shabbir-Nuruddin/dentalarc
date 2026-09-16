@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Phone, Mail, Calendar, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Calendar, Clock, Navigation, ExternalLink, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -100,45 +100,129 @@ export default function ContactPage() {
 
           {/* Contact Info & Map */}
           <div className="space-y-8 flex flex-col">
-            <div className="bg-slate-900 rounded-[2rem] p-10 text-white shadow-xl flex-grow">
-              <h2 className="text-2xl font-bold mb-8">Our Clinic</h2>
-              <div className="space-y-8">
-                <div className="flex items-start gap-5">
+            <div className="bg-slate-900 rounded-[2rem] p-8 md:p-10 text-white shadow-xl flex-grow">
+              <div className="flex items-center justify-between mb-8">
+                <h2 className="text-2xl font-bold">Our Clinics</h2>
+                <a 
+                  href="https://www.google.com/maps/place/DENTAL+ARC+%7C+Dental+Clinic+In+Sector+70+Gurgaon%7CDentist+%7C+RCT+%7C+Implants+Treatment+in+Sector+69+Gurugram%7C+Dr.Archana+Raj+Jha/@28.395294,77.030255,17z"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs bg-primary-600/20 text-primary-400 border border-primary-500/30 px-3 py-1.5 rounded-full flex items-center gap-1.5 hover:bg-primary-600/30 transition-colors"
+                >
+                  <span>★ 5.0 on Google</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+
+              <div className="space-y-7">
+                {/* Sector 70 */}
+                <div className="flex items-start gap-4">
                   <MapPin className="w-6 h-6 text-primary-400 shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-bold text-lg mb-1">New York Office</h3>
-                    <p className="text-slate-300 leading-relaxed">TULIP CHOWK, SPAZE FORUM, F-115, below Cult Fitness Gym<br/>Sector 70, Sector 69, Gurugram, Haryana 122018</p>
+                    <h3 className="font-bold text-lg mb-1 text-white">Sector 70 (Main Clinic)</h3>
+                    <p className="text-slate-300 leading-relaxed text-sm">
+                      F-115, 1st Floor, Spaze Forum (Corporate Park), Tulip Chowk, below Cult Fitness Gym, Sector 70, Gurugram, Haryana 122018
+                    </p>
+                    <div className="flex items-center gap-4 mt-2">
+                      <a 
+                        href="https://www.google.com/maps/dir/?api=1&destination=28.395294,77.030255" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-xs text-primary-400 hover:text-primary-300 font-semibold flex items-center gap-1"
+                      >
+                        <Navigation className="w-3.5 h-3.5" /> Get Directions
+                      </a>
+                      <a 
+                        href="https://www.google.com/maps/place/DENTAL+ARC+%7C+Dental+Clinic+In+Sector+70+Gurgaon%7CDentist+%7C+RCT+%7C+Implants+Treatment+in+Sector+69+Gurugram%7C+Dr.Archana+Raj+Jha/@28.395294,77.030255,17z" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-xs text-slate-400 hover:text-white flex items-center gap-1"
+                      >
+                        <ExternalLink className="w-3 h-3" /> View on Google Maps
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-start gap-5">
+
+                {/* Sector 65 */}
+                <div className="flex items-start gap-4 pt-4 border-t border-slate-800">
+                  <MapPin className="w-6 h-6 text-primary-400 shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-lg mb-1 text-white">Sector 65 (Branch)</h3>
+                    <p className="text-slate-300 leading-relaxed text-sm">
+                      R7-101 & 101A, M3M 65th Avenue, Emerald Hills Rd, Sector 65, Gurugram, Haryana 122102
+                    </p>
+                  </div>
+                </div>
+
+                {/* Phone & WhatsApp */}
+                <div className="flex items-start gap-4 pt-4 border-t border-slate-800">
                   <Phone className="w-6 h-6 text-primary-400 shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-bold text-lg mb-1">Direct Line</h3>
-                    <p className="text-slate-300 leading-relaxed">+91 99999 99999<br/><span className="text-sm text-slate-400">Available 24/7 for emergencies</span></p>
+                    <h3 className="font-bold text-lg mb-1 text-white">Call & WhatsApp</h3>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <a 
+                        href="tel:+917979927696" 
+                        className="text-primary-400 hover:text-primary-300 font-bold text-lg"
+                      >
+                        +91 79799 27696
+                      </a>
+                      <a 
+                        href="https://wa.me/917979927696?text=Hi%20Dental%20Arc,%20I%20would%20like%20to%20book%20an%20appointment" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-3 py-1 rounded-full hover:bg-emerald-500/30 transition-colors"
+                      >
+                        <MessageCircle className="w-3.5 h-3.5" /> WhatsApp Us
+                      </a>
+                    </div>
+                    <p className="text-xs text-slate-400 mt-1">Available for regular visits and dental emergency triage</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-5">
+
+                {/* Working Hours */}
+                <div className="flex items-start gap-4 pt-4 border-t border-slate-800">
                   <Clock className="w-6 h-6 text-primary-400 shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-bold text-lg mb-1">Working Hours</h3>
-                    <p className="text-slate-300 leading-relaxed">Mon - Thu: 8:00 AM - 6:00 PM<br/>Fri: 8:00 AM - 2:00 PM</p>
+                    <h3 className="font-bold text-lg mb-1 text-white">Working Hours</h3>
+                    <p className="text-slate-300 leading-relaxed text-sm">
+                      Mon - Sat: 9:00 AM - 9:00 PM<br/>
+                      Sunday: 9:00 AM - 7:00 PM
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Real Google Map Embed */}
-            <div className="rounded-[2rem] h-64 overflow-hidden border border-slate-200 shadow-sm relative">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={false} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0"
-              ></iframe>
+            {/* Real Google Map Embed for Sector 70 Gurgaon */}
+            <div className="rounded-[2rem] overflow-hidden border border-slate-200 shadow-md relative bg-slate-100 flex flex-col">
+              <div className="p-4 bg-white border-b border-slate-100 flex items-center justify-between">
+                <div>
+                  <h4 className="font-bold text-slate-900 text-sm">Dental Arc - Sector 70 Gurgaon</h4>
+                  <p className="text-xs text-slate-500">Spaze Forum, Tulip Chowk</p>
+                </div>
+                <a 
+                  href="https://www.google.com/maps/dir/?api=1&destination=28.395294,77.030255"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs bg-primary-600 hover:bg-primary-700 text-white font-semibold px-3 py-1.5 rounded-lg shadow-sm transition-colors"
+                >
+                  <Navigation className="w-3.5 h-3.5" />
+                  <span>Directions</span>
+                </a>
+              </div>
+              <div className="h-72 w-full relative">
+                <iframe 
+                  src="https://maps.google.com/maps?q=28.395294,77.030255+(DENTAL+ARC+Dental+Clinic+Sector+70+Gurgaon)&t=&z=16&ie=UTF8&iwloc=B&output=embed" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={false} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>

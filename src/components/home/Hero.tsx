@@ -48,9 +48,20 @@ export default function Hero() {
           animate="show"
           className="max-w-4xl text-white"
         >
-          <motion.div variants={item} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-sm font-medium mb-10">
-            <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-            <span className="tracking-wide">Top Rated Dental Clinic in Sector 70, Gurugram</span>
+          <motion.div variants={item}>
+            <a 
+              href="https://www.google.com/maps/place/DENTAL+ARC+%7C+Dental+Clinic+In+Sector+70+Gurgaon%7CDentist+%7C+RCT+%7C+Implants+Treatment+in+Sector+69+Gurugram%7C+Dr.Archana+Raj+Jha/@28.395294,77.030255,17z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-xl border border-white/20 text-sm font-medium mb-10 transition-colors group cursor-pointer"
+            >
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+              <span className="tracking-wide text-slate-200 group-hover:text-white">5.0 Star Rated on Google • Sector 70 & 65 Gurugram</span>
+            </a>
           </motion.div>
           
           <motion.h1 variants={item} className="text-6xl md:text-8xl font-bold tracking-tighter leading-[1.05] mb-8">
@@ -62,13 +73,24 @@ export default function Hero() {
             Specializing in pain-free Root Canal Treatments, Zirconia Crowns, and Dental Implants. Experience premium dental care with Dr. Archana Raj Jha.
           </motion.p>
           
-          <motion.div variants={item} className="flex flex-col sm:flex-row gap-6">
+          <motion.div variants={item} className="flex flex-wrap items-center gap-4">
             <PremiumButton href="/contact" variant="primary">
-              Book Your Visit
+              Book Appointment
             </PremiumButton>
-            <PremiumButton href="/services" variant="outline">
-              Explore Our Services
-            </PremiumButton>
+            <a 
+              href="https://www.google.com/maps/dir/?api=1&destination=28.395294,77.030255"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-full border border-white/30 text-white hover:bg-white/10 transition-all font-semibold text-sm flex items-center gap-2"
+            >
+              <span>Get Directions</span>
+            </a>
+            <a 
+              href="tel:+917979927696"
+              className="px-6 py-3 rounded-full bg-emerald-600/90 hover:bg-emerald-600 text-white transition-all font-semibold text-sm flex items-center gap-2 shadow-lg"
+            >
+              <span>Call +91 79799 27696</span>
+            </a>
           </motion.div>
         </motion.div>
       </div>

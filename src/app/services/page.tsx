@@ -1,6 +1,7 @@
 "use client";
 
-import { Sparkles, ShieldCheck, Activity, Smile, ArrowRight } from "lucide-react";
+import { Sparkles, ShieldCheck, Activity, ArrowRight } from "lucide-react";
+import DentalArcLogo from "@/components/ui/DentalArcLogo";
 import Link from "next/link";
 import { motion } from "motion/react";
 
@@ -110,7 +111,7 @@ export default function ServicesPage() {
         <div className="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-white flex flex-col items-center text-center relative overflow-hidden shadow-2xl">
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary-600/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
           
-          <Smile className="w-16 h-16 text-primary-400 mb-8" />
+          <DentalArcLogo className="w-20 h-20 text-primary-400 mb-8" />
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6 relative z-10">Unsure what you need?</h2>
           <p className="text-slate-300 mb-10 max-w-2xl text-lg font-light leading-relaxed relative z-10">
             Schedule a comprehensive consultation. We will evaluate your oral health and build a customized, transparent treatment plan just for you.
