@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { Star, ArrowUpRight, Phone, MapPin } from "lucide-react";
 import { assetPath } from "@/lib/utils";
+import ClinicImage from "@/components/ui/ClinicImage";
 import Link from "next/link";
 
 export default function Hero() {
@@ -104,8 +105,8 @@ export default function Hero() {
           <div className="lg:col-span-5 relative">
             <div className="relative overflow-hidden rounded-lg border border-slate-800 bg-slate-900">
               <div className="relative aspect-[4/3] w-full overflow-hidden">
-                <img
-                  src={assetPath("/clinic_operatory_overview.jpg")}
+                <ClinicImage
+                  src="/clinic_operatory_overview.jpg"
                   alt="Dental Arc actual operatory suite in Sector 70 Gurgaon"
                   className="w-full h-full object-cover"
                 />

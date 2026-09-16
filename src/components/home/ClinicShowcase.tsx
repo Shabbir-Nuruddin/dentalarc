@@ -1,7 +1,7 @@
 "use client";
 
-import { MapPin, Navigation, ExternalLink, ShieldCheck } from "lucide-react";
-import { assetPath } from "@/lib/utils";
+import { Navigation, ExternalLink, ShieldCheck } from "lucide-react";
+import ClinicImage from "@/components/ui/ClinicImage";
 
 export default function ClinicShowcase() {
   return (
@@ -37,8 +37,8 @@ export default function ClinicShowcase() {
           {/* Main Panoramic Operatory Feature (7 columns) */}
           <div className="lg:col-span-7 space-y-3">
             <div className="aspect-[16/11] w-full overflow-hidden bg-slate-100 rounded-sm">
-              <img
-                src={assetPath("/clinic_operatory_overview.jpg")}
+              <ClinicImage
+                src="/clinic_operatory_overview.jpg"
                 alt="Operatory Room with Dental Chair and Digital Radiography"
                 className="w-full h-full object-cover"
               />
@@ -58,8 +58,8 @@ export default function ClinicShowcase() {
             {/* Top Vignette: Laser Dentistry */}
             <div className="space-y-3">
               <div className="aspect-[16/10] w-full overflow-hidden bg-slate-100 rounded-sm">
-                <img
-                  src={assetPath("/clinic_treatment_laser.jpg")}
+                <ClinicImage
+                  src="/clinic_treatment_laser.jpg"
                   alt="Dr. Archana Raj Jha performing laser dentistry"
                   className="w-full h-full object-cover"
                 />
@@ -77,8 +77,8 @@ export default function ClinicShowcase() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <div className="aspect-square w-full overflow-hidden bg-slate-100 rounded-sm">
-                  <img
-                    src={assetPath("/clinic_consultation_suite.jpg")}
+                  <ClinicImage
+                    src="/clinic_consultation_suite.jpg"
                     alt="Consultation Suite"
                     className="w-full h-full object-cover"
                   />
@@ -88,8 +88,8 @@ export default function ClinicShowcase() {
 
               <div className="space-y-2">
                 <div className="aspect-square w-full overflow-hidden bg-slate-100 rounded-sm">
-                  <img
-                    src={assetPath("/clinic_exterior_signboard.jpg")}
+                  <ClinicImage
+                    src="/clinic_exterior_signboard.jpg"
                     alt="Dental Arc Physical Signboard"
                     className="w-full h-full object-cover"
                   />

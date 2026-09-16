@@ -1,7 +1,7 @@
 "use client";
 
 import { Award, GraduationCap, Clock, ShieldCheck } from "lucide-react";
-import { assetPath } from "@/lib/utils";
+import ClinicImage from "@/components/ui/ClinicImage";
 import Link from "next/link";
 
 export default function DoctorSpotlight() {
@@ -14,8 +14,8 @@ export default function DoctorSpotlight() {
           {/* Left Column: Portrait & Convocation (Clean Framing, NO Card Box) */}
           <div className="lg:col-span-5 space-y-4">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-200 shadow-md">
-              <img
-                src={assetPath("/dr_archana_raj_jha.jpg")}
+              <ClinicImage
+                src="/dr_archana_raj_jha.jpg"
                 alt="Dr. Archana Raj Jha, Dental Surgeon at Dental Arc Gurugram"
                 className="w-full h-full object-cover object-top"
               />

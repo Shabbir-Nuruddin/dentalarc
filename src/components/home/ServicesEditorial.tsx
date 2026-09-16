@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { assetPath } from "@/lib/utils";
+import ClinicImage from "@/components/ui/ClinicImage";
 
 const services = [
   {
@@ -132,8 +132,8 @@ export default function ServicesEditorial() {
           {/* Right Column: Visual Case / Operatory Evidence */}
           <div className="lg:col-span-5 sticky top-28 space-y-3">
             <div className="aspect-[4/3] w-full overflow-hidden rounded-lg bg-slate-100 border border-slate-200">
-              <img
-                src={assetPath(services[active].img)}
+              <ClinicImage
+                src={services[active].img}
                 alt={services[active].title}
                 className="w-full h-full object-cover transition-all duration-500"
               />

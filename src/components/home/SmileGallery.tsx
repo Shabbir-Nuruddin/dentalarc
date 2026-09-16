@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
-import { assetPath } from "@/lib/utils";
+import ClinicImage from "@/components/ui/ClinicImage";
 
 const outcomes = [
   {
@@ -62,8 +62,8 @@ export default function SmileGallery() {
           {outcomes.map((item, idx) => (
             <div key={idx} className="space-y-3">
               <div className="aspect-[4/3] w-full overflow-hidden rounded-sm bg-slate-100 border border-slate-200">
-                <img
-                  src={assetPath(item.img)}
+                <ClinicImage
+                  src={item.img}
                   alt={item.title}
                   className="w-full h-full object-cover"
                 />
