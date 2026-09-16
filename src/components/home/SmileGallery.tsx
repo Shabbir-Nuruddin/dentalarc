@@ -10,28 +10,28 @@ const cases = [
     treatment: "Zirconia Crown Restoration",
     patient: "Saurabh Rawat",
     review: "Replaced old ceramic crown with monolithic zirconia. Bite and aesthetics feel completely natural.",
-    img: "/scraped_img_4.jpg",
+    img: "/clinic_clinical_case.jpg",
     tag: "Restorative"
   },
   {
     treatment: "Dual Dental Implants",
     patient: "Ankit Jangra Milkpuria",
     review: "Both implants placed in a single visit without pain or swelling. Truly grateful for Dr. Archana's care.",
-    img: "/scraped_img_5.jpg",
+    img: "/clinic_happy_patient.jpg",
     tag: "Implantology"
   },
   {
     treatment: "Canine Replacement & Alignment",
     patient: "Apoorwa Dutt",
     review: "Astonished with the final aesthetic result after missing canine treatment. Flawless outcome.",
-    img: "/scraped_img_1.jpg",
+    img: "/clinic_treatment_laser.jpg",
     tag: "Cosmetic"
   },
   {
     treatment: "Painless Multi-Canal RCT",
     patient: "Amit Mishra",
     review: "Completely pain-free root canal and perfectly fitted crown. No discomfort or sensitivity.",
-    img: "/clinic-hero.jpg",
+    img: "/dental_arc_clinic_9.jpg",
     tag: "Endodontics"
   }
 ];
