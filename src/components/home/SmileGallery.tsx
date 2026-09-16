@@ -1,34 +1,7 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { Star, ArrowUpRight, CheckCircle2, MessageSquareQuote } from "lucide-react";
 import ClinicImage from "@/components/ui/ClinicImage";
-
-const outcomes = [
-  {
-    title: "Zirconia Crown & Gum Restoration",
-    detail: "10 Days Post-Procedure Outcome",
-    desc: "Biological crown contours with complete gingival healing and natural aesthetic emergence.",
-    img: "/clinic_clinical_case.jpg",
-  },
-  {
-    title: "Aesthetic Smile Transformation",
-    detail: "Cosmetic Anterior Alignment",
-    desc: "Restoration of incisal symmetry and natural shade harmony without invasive enamel reduction.",
-    img: "/dental_arc_clinic_9.jpg",
-  },
-  {
-    title: "Laser Periodontal Therapy",
-    detail: "Clinical Operatory Case",
-    desc: "Diode laser debridement for localized inflammation, restoring healthy pink gingival margins.",
-    img: "/clinic_treatment_laser.jpg",
-  },
-  {
-    title: "Implant Consultation & Fitment",
-    detail: "Complete Rehabilitation",
-    desc: "Stable dental implant placement restoring full masticatory function and patient confidence.",
-    img: "/clinic_happy_patient.jpg",
-  }
-];
 
 export default function SmileGallery() {
   return (
@@ -38,11 +11,14 @@ export default function SmileGallery() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between pb-10 mb-12 border-b border-slate-200 gap-6">
           <div className="max-w-2xl space-y-2">
+            <span className="text-xs font-bold tracking-widest uppercase text-primary-700">
+              Documented Clinical Outcome
+            </span>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
-              Clinical Case Evidence
+              Real-Life Case Study
             </h2>
             <p className="text-slate-600 text-base">
-              Documented treatment outcomes from our Gurugram practice.
+              A verified patient transformation from our Google Maps practice in Sector 70 Gurugram.
             </p>
           </div>
 
@@ -52,35 +28,95 @@ export default function SmileGallery() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary-700 hover:text-primary-800 transition-colors"
           >
-            <span>Verified Patient Outcomes on Google</span>
+            <span>Read on Google Maps</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>
 
-        {/* 4-Image Editorial Strip - Clean lines, NO Card Containers */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {outcomes.map((item, idx) => (
-            <div key={idx} className="space-y-3">
-              <div className="aspect-[4/3] w-full overflow-hidden rounded-sm bg-slate-100 border border-slate-200">
-                <ClinicImage
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="space-y-1">
-                <div className="text-[11px] font-semibold text-primary-700 uppercase tracking-wide">
-                  {item.detail}
-                </div>
-                <h3 className="text-base font-bold text-slate-900">
-                  {item.title}
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {item.desc}
-                </p>
+        {/* ONE Singular Featured Real-Life Example */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Column: Authentic Clinical Result Photo */}
+          <div className="lg:col-span-6 space-y-4">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-md">
+              <ClinicImage
+                src="/clinic_clinical_case.jpg"
+                alt="Dental Arc actual patient root canal and zirconia crown outcome 10 days post procedure"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute top-3 left-3 bg-slate-950/85 backdrop-blur-sm px-3 py-1 rounded text-[10px] font-mono uppercase tracking-widest text-emerald-400 border border-white/10">
+                10 Days Post-Procedure
               </div>
             </div>
-          ))}
+
+            <div className="flex items-baseline justify-between text-xs text-slate-500 px-1">
+              <span className="font-semibold text-slate-900">Microscopic RCT & 3 Monolithic Zirconia Crowns</span>
+              <span>Spaze Forum, Sector 70</span>
+            </div>
+          </div>
+
+          {/* Right Column: Actual Google Review & Verified Outcome */}
+          <div className="lg:col-span-6 space-y-6">
+            
+            {/* Reviewer Header */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-700 font-bold flex items-center justify-center text-sm">
+                    PY
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-base leading-tight">PRAVEEN YADAV</h3>
+                    <p className="text-xs text-slate-500">2 reviews • 3 photos • Verified Google Patient</p>
+                  </div>
+                </div>
+
+                <div className="flex text-amber-400 gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-current" />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Actual Google Review Quote */}
+            <blockquote className="text-base sm:text-lg font-light text-slate-800 leading-relaxed italic border-l-2 border-primary-600 pl-4">
+              "Outstanding dental care and a truly professional experience. Dr. Archana Jha performed my root canal treatment and fixed three crowns with remarkable precision and expertise. The entire treatment was completely pain-free, comfortable, and flawlessly executed."
+            </blockquote>
+
+            {/* Owner Response from Dr. Archana */}
+            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200/80 space-y-1.5 text-xs">
+              <div className="flex items-center gap-1.5 text-primary-700 font-semibold">
+                <MessageSquareQuote className="w-3.5 h-3.5" />
+                <span>Response from Dr. Archana Raj Jha (Owner)</span>
+              </div>
+              <p className="text-slate-600 leading-relaxed">
+                "Thank you for your kind words about Dental Arc, your preferred dental clinic in Sector 70 Gurgaon. Your satisfaction is our goal, and we are pleased to know you had a positive experience with our services."
+              </p>
+            </div>
+
+            {/* Clinical Highlights of this Case */}
+            <div className="pt-2 grid grid-cols-2 gap-3 text-xs text-slate-700">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Zero Pain Rotary RCT</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>3 Monolithic Zirconia Crowns</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Natural Bite Alignment</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Healthy Gingival Margins</span>
+              </div>
+            </div>
+
+          </div>
+
         </div>
 
       </div>
