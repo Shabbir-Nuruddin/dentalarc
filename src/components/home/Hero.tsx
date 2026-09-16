@@ -42,10 +42,10 @@ export default function Hero() {
                   <Star key={i} className="w-3.5 h-3.5 fill-current" />
                 ))}
               </div>
-              <span className="font-semibold text-white">5.0 Star Rated on Google</span>
+              <span className="font-semibold text-white">5.0 Rating on Google</span>
               <span className="text-slate-500">•</span>
               <span className="text-primary-400 group-hover:text-primary-300 flex items-center gap-1">
-                Verified Clinic <ArrowUpRight className="w-3 h-3" />
+                100+ Reviews <ArrowUpRight className="w-3 h-3" />
               </span>
             </a>
 
@@ -107,11 +107,11 @@ export default function Hero() {
               <div className="relative aspect-[4/3] w-full overflow-hidden">
                 <ClinicImage
                   src="/clinic_operatory_overview.jpg"
-                  alt="Dental Arc actual operatory suite in Sector 70 Gurgaon"
+                  alt="Dental Arc operatory suite in Sector 70 Gurgaon"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-sm px-3 py-1 rounded text-[10px] font-mono uppercase tracking-widest text-primary-300 border border-white/10">
-                  Actual Clinic Operatory
+                  Operatory Suite 1
                 </div>
               </div>
 

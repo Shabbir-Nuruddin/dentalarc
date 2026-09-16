@@ -12,13 +12,13 @@ export default function SmileGallery() {
         <div className="flex flex-col md:flex-row md:items-end justify-between pb-10 mb-12 border-b border-slate-200 gap-6">
           <div className="max-w-2xl space-y-2">
             <span className="text-xs font-bold tracking-widest uppercase text-primary-700">
-              Documented Clinical Outcome
+              Clinical Outcomes
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
-              Real-Life Case Study
+              Case Spotlight
             </h2>
             <p className="text-slate-600 text-base">
-              A verified patient transformation from our Google Maps practice in Sector 70 Gurugram.
+              Single-sitting endodontics and anatomical zirconia crown restoration at our Sector 70 practice.
             </p>
           </div>
 
@@ -33,7 +33,7 @@ export default function SmileGallery() {
           </a>
         </div>
 
-        {/* ONE Singular Featured Real-Life Example */}
+        {/* Featured Case Study */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Authentic Clinical Result Photo */}
@@ -41,7 +41,7 @@ export default function SmileGallery() {
             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-md">
               <ClinicImage
                 src="/clinic_clinical_case.jpg"
-                alt="Dental Arc actual patient root canal and zirconia crown outcome 10 days post procedure"
+                alt="Root canal and zirconia crown outcome 10 days post procedure"
                 className="w-full h-full object-cover"
               />
               <div className="absolute top-3 left-3 bg-slate-950/85 backdrop-blur-sm px-3 py-1 rounded text-[10px] font-mono uppercase tracking-widest text-emerald-400 border border-white/10">
@@ -55,7 +55,7 @@ export default function SmileGallery() {
             </div>
           </div>
 
-          {/* Right Column: Actual Google Review & Verified Outcome */}
+          {/* Right Column: Patient Review & Outcome */}
           <div className="lg:col-span-6 space-y-6">
             
             {/* Reviewer Header */}
@@ -67,7 +67,7 @@ export default function SmileGallery() {
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900 text-base leading-tight">PRAVEEN YADAV</h3>
-                    <p className="text-xs text-slate-500">2 reviews • 3 photos • Verified Google Patient</p>
+                    <p className="text-xs text-slate-500">Google Review • Sector 70 Clinic</p>
                   </div>
                 </div>
 
@@ -79,7 +79,7 @@ export default function SmileGallery() {
               </div>
             </div>
 
-            {/* Actual Google Review Quote */}
+            {/* Patient Review Quote */}
             <blockquote className="text-base sm:text-lg font-light text-slate-800 leading-relaxed italic border-l-2 border-primary-600 pl-4">
               "Outstanding dental care and a truly professional experience. Dr. Archana Jha performed my root canal treatment and fixed three crowns with remarkable precision and expertise. The entire treatment was completely pain-free, comfortable, and flawlessly executed."
             </blockquote>

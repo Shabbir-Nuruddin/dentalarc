@@ -22,13 +22,13 @@ export default function Home() {
       {/* 4. Dr. Archana Raj Jha Spotlight & Credentials */}
       <DoctorSpotlight />
 
-      {/* 5. Real Clinical Results & Smile Transformations */}
+      {/* 5. Case Spotlight & Outcomes */}
       <SmileGallery />
 
       {/* 6. Insurance & 0% EMI Financing */}
       <Insurances />
 
-      {/* 7. Verified Google Patient Reviews */}
+      {/* 7. Patient Reviews */}
       <ReviewsMarquee />
 
       {/* 8. Dual Clinic Locations with Interactive Google Maps */}

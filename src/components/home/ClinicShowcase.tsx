@@ -15,7 +15,7 @@ export default function ClinicShowcase() {
               The Clinic & Facilities
             </h2>
             <p className="text-slate-600 text-base leading-relaxed">
-              Authentic photography from our Gurugram operatories at Spaze Forum (Sector 70) and M3M 65th Avenue (Sector 65).
+              Take a look inside our treatment operatories at Spaze Forum (Sector 70) and M3M 65th Avenue (Sector 65).
             </p>
           </div>
 

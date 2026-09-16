@@ -113,7 +113,7 @@ export default function ReviewsMarquee() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest text-primary-700">
-              Verified Patient Experiences
+              Patient Stories
             </span>
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 mt-1">
               Google Maps Reviews
@@ -163,7 +163,7 @@ export default function ReviewsMarquee() {
                 "{rev.text}"
               </p>
               <span className="text-[11px] text-primary-700 font-medium mt-auto">
-                {rev.treatment} • Verified Review
+                {rev.treatment}
               </span>
             </div>
           ))}
@@ -201,7 +201,7 @@ export default function ReviewsMarquee() {
                 "{rev.text}"
               </p>
               <span className="text-[11px] text-primary-700 font-medium mt-auto">
-                {rev.treatment} • Verified Review
+                {rev.treatment}
               </span>
             </div>
           ))}

@@ -34,7 +34,7 @@ export default function AboutPage() {
         <div className="w-full h-[55vh] rounded-xl overflow-hidden border border-slate-200 relative bg-slate-100 shadow-lg">
           <ClinicImage 
             src="/clinic_operatory_overview.jpg" 
-            alt="Dental Arc actual operatory suite in Sector 70 Gurgaon" 
+            alt="Dental Arc operatory suite in Sector 70 Gurgaon" 
             className="w-full h-full object-cover"
           />
           <div className="absolute bottom-4 left-4 bg-slate-950/80 backdrop-blur-sm text-white px-4 py-2 rounded text-xs">
