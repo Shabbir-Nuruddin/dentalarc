@@ -1,7 +1,7 @@
 "use client";
 
 import { Star, ArrowUpRight, CheckCircle2, MessageSquareQuote } from "lucide-react";
-import ClinicImage from "@/components/ui/ClinicImage";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 
 export default function SmileGallery() {
   return (
@@ -33,24 +33,21 @@ export default function SmileGallery() {
           </a>
         </div>
 
-        {/* Featured Case Study */}
+        {/* Featured Case Study with Interactive Draggable Before / After Slider */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Authentic Clinical Result Photo */}
+          {/* Left Column: Interactive Before/After Slider */}
           <div className="lg:col-span-6 space-y-4">
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-md">
-              <ClinicImage
-                src="/clinic_clinical_case.jpg"
-                alt="Root canal and zirconia crown outcome 10 days post procedure"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute top-3 left-3 bg-slate-950/85 backdrop-blur-sm px-3 py-1 rounded text-[10px] font-mono uppercase tracking-widest text-emerald-400 border border-white/10">
-                10 Days Post-Procedure
-              </div>
-            </div>
+            <BeforeAfterSlider
+              beforeImage="/clinic_before_case.jpg"
+              afterImage="/clinic_after_case.jpg"
+              beforeLabel="Pre-Treatment"
+              afterLabel="10 Days Post-Op"
+              className="aspect-[16/10]"
+            />
 
             <div className="flex items-baseline justify-between text-xs text-slate-500 px-1">
-              <span className="font-semibold text-slate-900">Microscopic RCT & 3 Monolithic Zirconia Crowns</span>
+              <span className="font-semibold text-slate-900">Laser Gingival Therapy & 3 Zirconia Crowns</span>
               <span>Spaze Forum, Sector 70</span>
             </div>
           </div>
@@ -88,7 +85,7 @@ export default function SmileGallery() {
             <div className="bg-slate-50 rounded-lg p-4 border border-slate-200/80 space-y-1.5 text-xs">
               <div className="flex items-center gap-1.5 text-primary-700 font-semibold">
                 <MessageSquareQuote className="w-3.5 h-3.5" />
-                <span>Response from Dr. Archana Raj Jha (Owner)</span>
+                <span>Response from Dr. Archana Raj Jha</span>
               </div>
               <p className="text-slate-600 leading-relaxed">
                 "Thank you for your kind words about Dental Arc, your preferred dental clinic in Sector 70 Gurgaon. Your satisfaction is our goal, and we are pleased to know you had a positive experience with our services."

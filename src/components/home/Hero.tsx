@@ -30,7 +30,7 @@ export default function Hero() {
           {/* Left Column: Editorial Headline & Actions */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Google Rating Line - Unboxed */}
+            {/* Google Rating Line */}
             <a
               href="https://www.google.com/maps/place/DENTAL+ARC+%7C+Dental+Clinic+In+Sector+70+Gurgaon%7CDentist+%7C+RCT+%7C+Implants+Treatment+in+Sector+69+Gurugram%7C+Dr.Archana+Raj+Jha/@28.395294,77.030255,17z"
               target="_blank"
@@ -60,7 +60,7 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Understated Clinical Highlights Line - No Cards or Boxes */}
+            {/* Clinical Highlights Line */}
             <div className="pt-1 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs sm:text-sm text-slate-300 font-medium">
               <span>Painless Rotary RCT</span>
               <span className="text-slate-600">•</span>
@@ -72,30 +72,33 @@ export default function Hero() {
             </div>
 
             {/* Actions */}
-            <div className="flex flex-wrap items-center gap-4 pt-4">
+            <div className="flex flex-wrap items-center gap-3.5 pt-4">
               <Link
                 href="/contact"
-                className="bg-primary-600 hover:bg-primary-500 text-white font-semibold text-sm px-8 py-3.5 rounded-full transition-all shadow-md shadow-primary-900/40"
+                className="bg-primary-600 hover:bg-primary-500 text-white font-semibold text-sm px-7 py-3.5 rounded-full transition-all shadow-md shadow-primary-900/40"
               >
                 Book Consultation
               </Link>
 
+              {/* 1-Click WhatsApp Direct Button */}
               <a
-                href="tel:+917979927696"
-                className="inline-flex items-center gap-2 text-slate-200 hover:text-white text-sm font-semibold px-6 py-3.5 rounded-full border border-slate-700 hover:border-slate-500 transition-all"
+                href="https://wa.me/917979927696?text=Hi%20Dr.%20Archana%2C%20I%20would%20like%20to%20book%20a%20dental%20consultation%20at%20Dental%20Arc."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm font-semibold px-6 py-3.5 rounded-full transition-all shadow-md shadow-emerald-950/30"
               >
-                <Phone className="w-4 h-4 text-primary-400" />
-                <span>+91 79799 27696</span>
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                  <path d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.476-.15-.677.15-.2.3-.777.98-.953 1.18-.176.2-.352.226-.653.076-.301-.15-1.272-.469-2.423-1.496-.895-.798-1.5-1.784-1.676-2.085-.176-.301-.019-.464.132-.614.136-.135.301-.352.451-.527.151-.176.201-.301.302-.502.1-.2.05-.376-.025-.526-.075-.15-.677-1.633-.928-2.235-.245-.587-.494-.507-.677-.517-.176-.01-.376-.01-.577-.01-.201 0-.527.075-.803.376s-1.054 1.03-1.054 2.511 1.079 2.912 1.23 3.113c.15.2 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.635.722.23 1.379.197 1.9.12.58-.087 1.78-.727 2.03-1.43.25-.702.25-1.304.175-1.43-.075-.125-.276-.201-.577-.351zM12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.42 1.26 4.86L2 22l5.32-1.24A9.95 9.95 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10z" />
+                </svg>
+                <span>WhatsApp Clinic</span>
               </a>
 
               <a
-                href="https://www.google.com/maps/dir//DENTAL+ARC+Spaze+Forum+Sector+70+Gurugram"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-200 transition-colors py-2"
+                href="tel:+917979927696"
+                className="inline-flex items-center gap-2 text-slate-200 hover:text-white text-sm font-semibold px-5 py-3.5 rounded-full border border-slate-700 hover:border-slate-500 transition-all"
               >
-                <MapPin className="w-3.5 h-3.5 text-primary-400" />
-                <span>Spaze Forum, Sector 70</span>
+                <Phone className="w-4 h-4 text-primary-400" />
+                <span>+91 79799 27696</span>
               </a>
             </div>
 
@@ -115,7 +118,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Minimal Caption Strip */}
+              {/* Caption Strip */}
               <div className="p-4 bg-slate-900 border-t border-slate-800 flex items-center justify-between text-xs">
                 <div>
                   <p className="font-semibold text-white">Dental Arc Operatory Suite</p>

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import MobileActionbar from "@/components/layout/MobileActionbar";
+import WhatsAppBooking from "@/components/ui/WhatsAppBooking";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <WhatsAppBooking />
         <MobileActionbar />
       </body>
     </html>
