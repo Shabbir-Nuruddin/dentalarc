@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { X, Send, Clock, MapPin, Sparkles } from "lucide-react";
+import { useState, useEffect } from "react";
+import { X, Send, Clock, MapPin, Volume2, VolumeX } from "lucide-react";
+import { playSnap, playTick, isSoundEnabled, toggleSound } from "@/lib/sound";
 
 const options = [
   {
@@ -33,19 +34,36 @@ const options = [
 
 export default function WhatsAppBooking() {
   const [isOpen, setIsOpen] = useState(false);
+  const [soundOn, setSoundOn] = useState(true);
+
+  useEffect(() => {
+    setSoundOn(isSoundEnabled());
+  }, []);
+
+  const handleToggleSound = () => {
+    const next = toggleSound();
+    setSoundOn(next);
+  };
+
+  const handleToggleOpen = () => {
+    playSnap(isOpen ? 360 : 520, 0.06);
+    setIsOpen(!isOpen);
+  };
 
   const handleOpenWhatsApp = (message: string) => {
+    playTick(2600, 0.05);
     const encoded = encodeURIComponent(message);
     window.open(`https://wa.me/917979927696?text=${encoded}`, "_blank");
     setIsOpen(false);
   };
+
 
   return (
     <>
       {/* Floating Action Button */}
       <div className="fixed bottom-20 md:bottom-8 right-5 z-40">
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={handleToggleOpen}
           aria-label="Chat on WhatsApp with Dr. Archana"
           className="flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 group border-2 border-white"
         >
@@ -81,7 +99,10 @@ export default function WhatsAppBooking() {
               <p className="text-xs text-slate-300">Dr. Archana Raj Jha • +91 79799 27696</p>
             </div>
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                playSnap(360, 0.05);
+                setIsOpen(false);
+              }}
               className="text-slate-400 hover:text-white p-1 rounded-lg transition-colors"
             >
               <X className="w-5 h-5" />
@@ -123,18 +144,37 @@ export default function WhatsAppBooking() {
             ))}
           </div>
 
-          {/* Direct Custom Message Link */}
-          <div className="p-3 bg-slate-50 border-t border-slate-200 text-center">
+          {/* Direct Custom Message Link & Sound Micro-Toggle */}
+          <div className="p-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between text-xs">
             <button
               onClick={() =>
                 handleOpenWhatsApp(
                   "Hi Dr. Archana, I would like to book a dental appointment at Dental Arc."
                 )
               }
-              className="text-xs font-semibold text-emerald-700 hover:text-emerald-800 flex items-center justify-center gap-1.5 w-full py-1.5"
+              className="font-semibold text-emerald-700 hover:text-emerald-800 flex items-center gap-1 py-1"
             >
-              <span>Custom consultation request</span>
+              <span>Custom message</span>
               <span>→</span>
+            </button>
+
+            {/* Micro Audio Feedback Toggle */}
+            <button
+              onClick={handleToggleSound}
+              title={soundOn ? "Mute interactive acoustic clicks" : "Unmute interactive acoustic clicks"}
+              className="inline-flex items-center gap-1 text-[11px] text-slate-400 hover:text-slate-700 transition-colors px-2 py-1 rounded bg-white border border-slate-200"
+            >
+              {soundOn ? (
+                <>
+                  <Volume2 className="w-3 h-3 text-teal-600" />
+                  <span>Sound ON</span>
+                </>
+              ) : (
+                <>
+                  <VolumeX className="w-3 h-3 text-slate-400" />
+                  <span>Sound OFF</span>
+                </>
+              )}
             </button>
           </div>
 

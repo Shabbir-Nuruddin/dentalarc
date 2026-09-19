@@ -2,6 +2,7 @@
 
 import { Award, GraduationCap, Clock, ShieldCheck } from "lucide-react";
 import ClinicImage from "@/components/ui/ClinicImage";
+import CircularClinicSeal from "@/components/ui/CircularClinicSeal";
 import Link from "next/link";
 
 export default function DoctorSpotlight() {
@@ -12,7 +13,12 @@ export default function DoctorSpotlight() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Portrait & Convocation (Clean Framing, NO Card Box) */}
-          <div className="lg:col-span-5 space-y-4">
+          <div className="lg:col-span-5 space-y-4 relative">
+            {/* Rotating Seal Stamp of Clinical Credential */}
+            <div className="absolute -top-6 -right-6 z-20 hidden sm:block">
+              <CircularClinicSeal size={110} theme="light" />
+            </div>
+
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-200 shadow-md">
               <ClinicImage
                 src="/dr_archana_raj_jha.jpg"

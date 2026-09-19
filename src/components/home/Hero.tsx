@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Star, ArrowUpRight, Phone, MapPin } from "lucide-react";
 import { assetPath } from "@/lib/utils";
 import ClinicImage from "@/components/ui/ClinicImage";
+import CircularClinicSeal from "@/components/ui/CircularClinicSeal";
 import Link from "next/link";
 
 export default function Hero() {
@@ -106,7 +107,12 @@ export default function Hero() {
 
           {/* Right Column: Clean Architectural Photo Frame of the Operatory */}
           <div className="lg:col-span-5 relative">
-            <div className="relative overflow-hidden rounded-lg border border-slate-800 bg-slate-900">
+            {/* Rotating Clinical Seal (Tactile Architectural Stamp) */}
+            <div className="absolute -bottom-6 -left-6 z-20 hidden sm:block">
+              <CircularClinicSeal size={120} theme="dark" />
+            </div>
+
+            <div className="relative overflow-hidden rounded-lg border border-slate-800 bg-slate-900 shadow-2xl">
               <div className="relative aspect-[4/3] w-full overflow-hidden">
                 <ClinicImage
                   src="/clinic_operatory_overview.jpg"

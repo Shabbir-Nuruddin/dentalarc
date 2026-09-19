@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import ClinicImage from "@/components/ui/ClinicImage";
+import { playTick, playSnap } from "@/lib/sound";
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -21,12 +22,20 @@ export default function BeforeAfterSlider({
   const [sliderPos, setSliderPos] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const lastTickPos = useRef(50);
 
   const handleMove = useCallback((clientX: number) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     const x = clientX - rect.left;
     const pos = Math.max(0, Math.min(100, (x / rect.width) * 100));
+
+    // Acoustic micro-click every 3% step change
+    if (Math.abs(pos - lastTickPos.current) >= 3.0) {
+      playTick(2400, 0.035);
+      lastTickPos.current = pos;
+    }
+
     setSliderPos(pos);
   }, []);
 
@@ -36,7 +45,28 @@ export default function BeforeAfterSlider({
     }
   }, [handleMove]);
 
-  const handleMouseDown = () => setIsDragging(true);
+  const handleMouseDown = () => {
+    setIsDragging(true);
+    playSnap(480, 0.05);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      setSliderPos((prev) => {
+        const next = Math.max(0, prev - 5);
+        playTick(2200, 0.04);
+        return next;
+      });
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      setSliderPos((prev) => {
+        const next = Math.min(100, prev + 5);
+        playTick(2600, 0.04);
+        return next;
+      });
+    }
+  };
 
   useEffect(() => {
     const handleMouseUp = () => setIsDragging(false);
@@ -56,12 +86,20 @@ export default function BeforeAfterSlider({
     };
   }, [isDragging, handleMove]);
 
+
   return (
     <div
       ref={containerRef}
+      tabIndex={0}
+      role="slider"
+      aria-label="Before and after clinical comparison slider"
+      aria-valuenow={Math.round(sliderPos)}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      onKeyDown={handleKeyDown}
       onMouseDown={handleMouseDown}
       onTouchMove={handleTouchMove}
-      className={`relative w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-900 select-none cursor-ew-resize group shadow-md ${className}`}
+      className={`relative w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-900 select-none cursor-ew-resize group shadow-md focus:outline-none focus:ring-2 focus:ring-primary-500 ${className}`}
     >
       {/* After Image (Full Base) */}
       <div className="absolute inset-0 w-full h-full">
