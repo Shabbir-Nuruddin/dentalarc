@@ -207,17 +207,6 @@ export default function Hero() {
 
             </div>
 
-            {/* Quick Floating Treatment Metric */}
-            <div className="absolute -bottom-5 -left-5 bg-white border-2 border-slate-900 px-4 py-2 rounded-xl shadow-offset-sm hidden sm:flex items-center gap-3 z-20">
-              <div className="w-9 h-9 rounded-lg bg-teal-50 text-teal-800 border border-teal-300 flex items-center justify-center font-black text-sm">
-                0%
-              </div>
-              <div className="text-left">
-                <p className="text-[10px] font-mono uppercase text-slate-500 leading-none">In-Clinic Financing</p>
-                <p className="text-xs font-bold text-slate-900 mt-0.5 leading-none">Instant 0% EMI Approval</p>
-              </div>
-            </div>
-
           </motion.div>
 
         </div>

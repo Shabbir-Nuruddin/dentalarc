@@ -59,14 +59,6 @@ export default function Navbar() {
             <span>Treatments</span>
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-700 group-hover:w-full transition-all duration-200" />
           </Link>
-          <a
-            href="#estimator"
-            onClick={handleNavClick}
-            className="hover:text-primary-700 transition-colors py-1 relative group"
-          >
-            <span>Care Estimator</span>
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-700 group-hover:w-full transition-all duration-200" />
-          </a>
           <Link
             href="/about"
             onClick={handleNavClick}
@@ -136,14 +128,6 @@ export default function Navbar() {
               <span>Treatments & Pricing</span>
               <ArrowUpRight className="w-4 h-4 text-slate-400" />
             </Link>
-            <a
-              href="#estimator"
-              onClick={handleNavClick}
-              className="p-2 hover:bg-slate-100 rounded-lg transition-colors flex justify-between items-center"
-            >
-              <span>Care & Sitting Estimator</span>
-              <ArrowUpRight className="w-4 h-4 text-slate-400" />
-            </a>
             <Link
               href="/about"
               onClick={handleNavClick}

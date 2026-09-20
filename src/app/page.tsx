@@ -2,7 +2,6 @@ import Hero from "@/components/home/Hero";
 import ClinicShowcase from "@/components/home/ClinicShowcase";
 import ServicesEditorial from "@/components/home/ServicesEditorial";
 import DoctorSpotlight from "@/components/home/DoctorSpotlight";
-import TreatmentEstimator from "@/components/home/TreatmentEstimator";
 import SmileGallery from "@/components/home/SmileGallery";
 import Insurances from "@/components/home/Insurances";
 import ReviewsMarquee from "@/components/home/ReviewsMarquee";
@@ -24,10 +23,7 @@ export default function Home() {
       {/* 4. Dr. Archana Raj Jha Spotlight & Credentials */}
       <DoctorSpotlight />
 
-      {/* 6. Interactive Treatment & Sitting Estimator */}
-      <TreatmentEstimator />
-
-      {/* 7. Case Spotlight & Draggable Before/After Outcome */}
+      {/* 5. Case Spotlight & Draggable Before/After Outcome */}
       <SmileGallery />
 
       {/* 8. Insurance & 0% EMI Financing */}
