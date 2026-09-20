@@ -221,7 +221,7 @@ export default function TreatmentEstimator() {
   const waUrl = `https://wa.me/917979927696?text=${encodeURIComponent(waMessage)}`;
 
   return (
-    <section className="py-24 bg-[#FAF8F5] border-b-2 border-slate-900 text-slate-900">
+    <section id="estimator" className="py-24 bg-[#FAF8F5] border-b-2 border-slate-900 text-slate-900 scroll-mt-20">
       <div className="layout-container">
         
         {/* Section Header */}
