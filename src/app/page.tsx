@@ -1,7 +1,6 @@
 import Hero from "@/components/home/Hero";
 import ClinicShowcase from "@/components/home/ClinicShowcase";
 import ServicesEditorial from "@/components/home/ServicesEditorial";
-import ClinicalScrollJourney from "@/components/home/ClinicalScrollJourney";
 import DoctorSpotlight from "@/components/home/DoctorSpotlight";
 import TreatmentEstimator from "@/components/home/TreatmentEstimator";
 import SmileGallery from "@/components/home/SmileGallery";
@@ -22,10 +21,7 @@ export default function Home() {
       {/* 3. Comprehensive Specialized Dental Treatments */}
       <ServicesEditorial />
 
-      {/* 4. Scroll-Driven Procedure Scrubbing Sequence */}
-      <ClinicalScrollJourney />
-
-      {/* 5. Dr. Archana Raj Jha Spotlight & Credentials */}
+      {/* 4. Dr. Archana Raj Jha Spotlight & Credentials */}
       <DoctorSpotlight />
 
       {/* 6. Interactive Treatment & Sitting Estimator */}
