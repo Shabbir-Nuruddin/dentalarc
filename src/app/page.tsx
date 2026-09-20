@@ -1,10 +1,13 @@
 import Hero from "@/components/home/Hero";
 import ClinicShowcase from "@/components/home/ClinicShowcase";
 import ServicesEditorial from "@/components/home/ServicesEditorial";
+import ClinicalScrollJourney from "@/components/home/ClinicalScrollJourney";
 import DoctorSpotlight from "@/components/home/DoctorSpotlight";
+import TreatmentEstimator from "@/components/home/TreatmentEstimator";
 import SmileGallery from "@/components/home/SmileGallery";
 import Insurances from "@/components/home/Insurances";
 import ReviewsMarquee from "@/components/home/ReviewsMarquee";
+import PatientFAQ from "@/components/home/PatientFAQ";
 import ClinicLocations from "@/components/home/ClinicLocations";
 
 export default function Home() {
@@ -19,19 +22,28 @@ export default function Home() {
       {/* 3. Comprehensive Specialized Dental Treatments */}
       <ServicesEditorial />
 
-      {/* 4. Dr. Archana Raj Jha Spotlight & Credentials */}
+      {/* 4. Scroll-Driven Procedure Scrubbing Sequence */}
+      <ClinicalScrollJourney />
+
+      {/* 5. Dr. Archana Raj Jha Spotlight & Credentials */}
       <DoctorSpotlight />
 
-      {/* 5. Case Spotlight & Outcomes */}
+      {/* 6. Interactive Treatment & Sitting Estimator */}
+      <TreatmentEstimator />
+
+      {/* 7. Case Spotlight & Draggable Before/After Outcome */}
       <SmileGallery />
 
-      {/* 6. Insurance & 0% EMI Financing */}
+      {/* 8. Insurance & 0% EMI Financing */}
       <Insurances />
 
-      {/* 7. Patient Reviews */}
+      {/* 9. Patient Reviews Marquee */}
       <ReviewsMarquee />
 
-      {/* 8. Dual Clinic Locations with Interactive Google Maps */}
+      {/* 10. Tactile Spring FAQ Accordion */}
+      <PatientFAQ />
+
+      {/* 11. Dual Clinic Locations with Interactive Google Maps */}
       <ClinicLocations />
     </div>
   );

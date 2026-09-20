@@ -20,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} antialiased bg-surface text-text-main flex flex-col min-h-screen`}>
+      <body className={`${inter.variable} antialiased bg-surface text-text-main flex flex-col min-h-screen relative`}>
+        {/* Subtle Paper & Ink Grain Noise Overlay (Physical tactile paper depth) */}
+        <div className="grain-print fixed inset-0 pointer-events-none z-50 opacity-[0.035] mix-blend-overlay" />
+        
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
