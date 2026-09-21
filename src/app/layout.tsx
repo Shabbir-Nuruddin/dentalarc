@@ -9,8 +9,8 @@ import WhatsAppBooking from "@/components/ui/WhatsAppBooking";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "DENTAL ARC | Dental Clinic In Sector 70 Gurgaon | Dr. Archana Raj Jha",
-  description: "Dentist | RCT | Implants Treatment in Sector 69 Gurugram. Experience world-class dental care in a modern, comfortable environment.",
+  title: "The Dental Salt | Dr. Madhushree Agarwal | Dental Clinic in Sector 70 & Golf Course Ext Gurugram",
+  description: "Personalized, painless and evidence-based dentistry in Gurugram by Dr. Madhushree Agarwal (15+ yrs clinical excellence, Dr. R. Ahmed alumna). Call/WhatsApp +91 99993 85782.",
 };
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} antialiased bg-surface text-text-main flex flex-col min-h-screen relative`}>
-        {/* Subtle Paper & Ink Grain Noise Overlay (Physical tactile paper depth) */}
+        {/* Subtle Paper & Ink Grain Noise Overlay */}
         <div className="grain-print fixed inset-0 pointer-events-none z-50 opacity-[0.035] mix-blend-overlay" />
         
         <Navbar />

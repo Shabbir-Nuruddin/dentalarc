@@ -1,9 +1,7 @@
 import Hero from "@/components/home/Hero";
-import ClinicShowcase from "@/components/home/ClinicShowcase";
 import ServicesEditorial from "@/components/home/ServicesEditorial";
 import DoctorSpotlight from "@/components/home/DoctorSpotlight";
 import SmileGallery from "@/components/home/SmileGallery";
-import Insurances from "@/components/home/Insurances";
 import ReviewsMarquee from "@/components/home/ReviewsMarquee";
 import PatientFAQ from "@/components/home/PatientFAQ";
 import ClinicLocations from "@/components/home/ClinicLocations";
@@ -11,31 +9,25 @@ import ClinicLocations from "@/components/home/ClinicLocations";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 1. Impactful Video & Operatory Hero */}
+      {/* 1. Hero: Personalized, Painless & Evidence-Based Dentistry */}
       <Hero />
 
-      {/* 2. Authentic Clinic & Operatory Showcase */}
-      <ClinicShowcase />
-
-      {/* 3. Comprehensive Specialized Dental Treatments */}
-      <ServicesEditorial />
-
-      {/* 4. Dr. Archana Raj Jha Spotlight & Credentials */}
+      {/* 2. Doctor Spotlight: Dr. Madhushree Agarwal & 15+ Yrs Pedigree */}
       <DoctorSpotlight />
 
-      {/* 5. Case Spotlight & Draggable Before/After Outcome */}
+      {/* 3. Comprehensive Conservative Dental Services */}
+      <ServicesEditorial />
+
+      {/* 4. Verified Before/After Restoration Outcome Slider */}
       <SmileGallery />
 
-      {/* 8. Insurance & 0% EMI Financing */}
-      <Insurances />
-
-      {/* 9. Patient Reviews Marquee */}
+      {/* 5. 4.9 Star Patient Stories (250+ Reviews) */}
       <ReviewsMarquee />
 
-      {/* 10. Tactile Spring FAQ Accordion */}
+      {/* 6. The Essential Questions FAQ Accordion */}
       <PatientFAQ />
 
-      {/* 11. Dual Clinic Locations with Interactive Google Maps */}
+      {/* 7. Dual Clinic Locations (Sector 70 & Golf Course Ext) */}
       <ClinicLocations />
     </div>
   );

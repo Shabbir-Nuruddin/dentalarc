@@ -1,116 +1,97 @@
+"use client";
+
 import Link from "next/link";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import DentalSaltLogo from "@/components/ui/DentalSaltLogo";
+import { Phone, MapPin, Clock, Star, Heart } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300 py-16 mt-auto">
-      <div className="layout-container grid grid-cols-1 md:grid-cols-4 gap-12">
-        {/* Brand */}
-        <div className="space-y-4">
-          <h3 className="text-white text-xl font-semibold tracking-tight">Dental Arc</h3>
-          <p className="text-sm text-slate-400 leading-relaxed">
-            Redefining dental care with a modern, comfortable, and patient-first approach. 
-            Experience the difference of impeccable dentistry.
+    <footer className="bg-slate-950 text-white border-t-2 border-slate-900 pt-16 pb-12">
+      <div className="layout-container">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
+          
+          {/* Col 1: Brand & Philosophy (5 cols) */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="flex items-center gap-3">
+              <DentalSaltLogo className="h-8 w-auto brightness-200" />
+              <div className="flex flex-col">
+                <span className="font-black text-xl tracking-tight text-white leading-none">
+                  The Dental <span className="text-teal-400 font-light">Salt</span>
+                </span>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 mt-0.5">
+                  Sector 70 & Golf Course Ext. • Gurugram
+                </span>
+              </div>
+            </div>
+
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+              Personalized, painless and evidence-based dentistry for children, adults, and seniors in Gurugram. Led by Dr. Madhushree Agarwal (15+ Years Clinical Excellence).
+            </p>
+
+            <div className="flex items-center gap-2 text-xs text-amber-400 font-mono pt-1">
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                ))}
+              </div>
+              <span className="font-bold text-white">4.9 / 5.0</span>
+              <span className="text-slate-500">•</span>
+              <span className="text-slate-400">250+ Verified Reviews</span>
+            </div>
+          </div>
+
+          {/* Col 2: Services Quick Links (3 cols) */}
+          <div className="lg:col-span-3 space-y-3">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-teal-400">
+              Clinical Care
+            </h4>
+            <ul className="space-y-2 text-xs text-slate-400">
+              <li><Link href="/services" className="hover:text-white transition-colors">Painless Rotary RCT</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">Conservative Tooth Preservation</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">CAD/CAM Zirconia Crowns</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">Gentle Pediatric Dentistry</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">Dental Implants & 0% EMI</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">Teeth Whitening & Scaling</Link></li>
+            </ul>
+          </div>
+
+          {/* Col 3: Practices & Hours (4 cols) */}
+          <div className="lg:col-span-4 space-y-3">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-teal-400">
+              Clinic Contact & Hours
+            </h4>
+            <div className="space-y-2 text-xs text-slate-400">
+              <p className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                <span><strong>Sector 70:</strong> C-112A, Tapasya Grand Walk, Gurugram 122018</span>
+              </p>
+              <p className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                <span><strong>Golf Course Ext:</strong> B/1, Golf Course Ext Road, Gurugram 122101</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>Mon – Sun: 09:00 AM – 08:00 PM (Open 7 Days)</span>
+              </p>
+              <p className="flex items-center gap-2 pt-1">
+                <Phone className="w-4 h-4 text-teal-400 shrink-0" />
+                <a href="tel:+919999385782" className="text-white font-bold hover:text-teal-300 transition-colors">
+                  +91 99993 85782
+                </a>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500 font-mono">
+          <p>© {new Date().getFullYear()} The Dental Salt. All Rights Reserved.</p>
+          <p className="flex items-center gap-1">
+            <span>Dr. Madhushree Agarwal • Dr. R. Ahmed Dental College Alumna</span>
           </p>
         </div>
 
-        {/* Quick Links */}
-        <div className="space-y-4">
-          <h4 className="text-white font-medium">Quick Links</h4>
-          <ul className="space-y-2 text-sm">
-            <li><Link href="/services" className="hover:text-primary-400 transition-colors">Our Services</Link></li>
-            <li><Link href="/about" className="hover:text-primary-400 transition-colors">Meet The Team</Link></li>
-            <li><Link href="/contact" className="hover:text-primary-400 transition-colors">Book Online</Link></li>
-            <li><Link href="#" className="hover:text-primary-400 transition-colors">Patient Portal</Link></li>
-          </ul>
-        </div>
-
-        {/* Contact Info */}
-        <div className="space-y-4">
-          <h4 className="text-white font-medium">Clinics & Location</h4>
-          <ul className="space-y-3 text-sm">
-            <li className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-primary-500 shrink-0 mt-0.5" />
-              <div>
-                <span className="font-semibold text-white block">Sector 70 (Main Clinic):</span>
-                <span>F-115, Spaze Forum (Corporate Park), Tulip Chowk, Sector 70, Gurugram (below Cult Fitness)</span>
-                <div className="mt-1 flex gap-3 text-xs">
-                  <a 
-                    href="https://www.google.com/maps/place/DENTAL+ARC+%7C+Dental+Clinic+In+Sector+70+Gurgaon%7CDentist+%7C+RCT+%7C+Implants+Treatment+in+Sector+69+Gurugram%7C+Dr.Archana+Raj+Jha/@28.395294,77.030255,17z"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary-400 hover:text-primary-300 underline font-medium"
-                  >
-                    Google Maps
-                  </a>
-                  <a 
-                    href="https://www.google.com/maps/dir/?api=1&destination=28.395294,77.030255"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary-400 hover:text-primary-300 underline font-medium"
-                  >
-                    Get Directions
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li className="flex items-start gap-3 pt-2 border-t border-slate-800">
-              <MapPin className="w-5 h-5 text-primary-500 shrink-0 mt-0.5" />
-              <div>
-                <span className="font-semibold text-white block">Sector 65 Branch:</span>
-                <span>R7-101 & 101A, M3M 65th Avenue, Emerald Hills Rd, Sector 65, Gurugram</span>
-              </div>
-            </li>
-            <li className="flex items-center gap-3 pt-1">
-              <Phone className="w-5 h-5 text-primary-500 shrink-0" />
-              <a href="tel:+917979927696" className="text-white hover:text-primary-400 transition-colors font-semibold">
-                +91 79799 27696
-              </a>
-            </li>
-            <li className="flex items-center gap-3">
-              <Mail className="w-5 h-5 text-primary-500 shrink-0" />
-              <span>contact@dentalarc.in</span>
-            </li>
-          </ul>
-        </div>
-
-        {/* Hours */}
-        <div className="space-y-4">
-          <h4 className="text-white font-medium">Clinic Timings</h4>
-          <ul className="space-y-2 text-sm">
-            <li className="flex justify-between border-b border-slate-800 pb-2">
-              <span>Mon - Sat</span>
-              <span className="text-slate-300 font-medium">9:00 AM - 9:00 PM</span>
-            </li>
-            <li className="flex justify-between border-b border-slate-800 pb-2">
-              <span>Sunday</span>
-              <span className="text-slate-300 font-medium">9:00 AM - 7:00 PM</span>
-            </li>
-            <li className="flex justify-between border-b border-slate-800 pb-2">
-              <span>Emergency Care</span>
-              <span className="text-primary-400 font-medium">On Call (24/7)</span>
-            </li>
-          </ul>
-
-          <div className="pt-2">
-            <a 
-              href="https://www.google.com/maps/place/DENTAL+ARC+%7C+Dental+Clinic+In+Sector+70+Gurgaon%7CDentist+%7C+RCT+%7C+Implants+Treatment+in+Sector+69+Gurugram%7C+Dr.Archana+Raj+Jha/@28.395294,77.030255,17z/data=!4m8!3m7!1s0x390d2308072eed75:0xdf3be68ea474d7bc!8m2!3d28.395294!4d77.030255!9m1!1b1!16s%2Fg%2F11t9qzcjv5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-2 rounded-lg transition-colors border border-slate-700"
-            >
-              <span>★ 5.0 Rating on Google Reviews</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      
-      <div className="layout-container mt-16 pt-8 border-t border-slate-800 text-xs text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p>&copy; {new Date().getFullYear()} Dental Arc. All rights reserved.</p>
-        <div className="flex gap-4">
-          <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-          <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
-        </div>
       </div>
     </footer>
   );
