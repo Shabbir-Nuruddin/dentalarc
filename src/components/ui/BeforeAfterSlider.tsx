@@ -106,32 +106,25 @@ export default function BeforeAfterSlider({
         <ClinicImage
           src={afterImage}
           alt={afterLabel}
-          className="w-full h-full object-cover pointer-events-none"
+          className="w-full h-full object-cover pointer-events-none select-none"
         />
-        <div className="absolute top-3 right-3 bg-black/75 backdrop-blur-sm text-emerald-400 text-[10px] font-semibold px-2.5 py-1 rounded tracking-wider uppercase border border-white/10">
+        <div className="absolute top-3 right-3 bg-black/80 backdrop-blur-sm text-emerald-400 text-[10px] font-semibold px-2.5 py-1 rounded tracking-wider uppercase border border-white/15">
           {afterLabel}
         </div>
       </div>
 
-      {/* Before Image (Clipped Overlay) */}
+      {/* Before Image (Clipped Overlay with 100% optical alignment) */}
       <div
-        className="absolute inset-0 h-full overflow-hidden pointer-events-none"
-        style={{ width: `${sliderPos}%` }}
+        className="absolute inset-0 w-full h-full pointer-events-none select-none"
+        style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
       >
-        <div
-          className="relative h-full"
-          style={{
-            width: containerRef.current ? `${containerRef.current.clientWidth}px` : "100%",
-          }}
-        >
-          <ClinicImage
-            src={beforeImage}
-            alt={beforeLabel}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute top-3 left-3 bg-black/75 backdrop-blur-sm text-slate-200 text-[10px] font-semibold px-2.5 py-1 rounded tracking-wider uppercase border border-white/10">
-            {beforeLabel}
-          </div>
+        <ClinicImage
+          src={beforeImage}
+          alt={beforeLabel}
+          className="w-full h-full object-cover select-none"
+        />
+        <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-sm text-slate-200 text-[10px] font-semibold px-2.5 py-1 rounded tracking-wider uppercase border border-white/15">
+          {beforeLabel}
         </div>
       </div>
 

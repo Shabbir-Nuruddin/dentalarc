@@ -30,7 +30,7 @@ export default function SmileGallery() {
               beforeImage="/clinic_before_case.jpg"
               afterImage="/clinic_after_case.jpg"
               beforeLabel="Pre-Treatment Presentation"
-              afterLabel="10-Day Healed Outcome"
+              afterLabel="Healed Outcome (10 Days)"
               className="aspect-[16/10] rounded-xl"
             />
           </div>
