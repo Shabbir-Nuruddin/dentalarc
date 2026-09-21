@@ -9,9 +9,13 @@ export function assetPath(path: string): string {
   if (!path) return "";
   if (path.startsWith("http://") || path.startsWith("https://")) return path;
   const clean = path.startsWith("/") ? path : `/${path}`;
-  if (typeof window !== "undefined" && window.location.pathname.startsWith("/dentalarc")) {
-    return `/dentalarc${clean}`;
+  if (typeof window !== "undefined") {
+    const segments = window.location.pathname.split("/").filter(Boolean);
+    if (segments.length > 0 && (segments[0] === "dentalsalt" || segments[0] === "dentalarc")) {
+      return `/${segments[0]}${clean}`;
+    }
   }
-  return process.env.NODE_ENV === "production" ? `/dentalarc${clean}` : clean;
+  const repo = process.env.NEXT_PUBLIC_REPO_NAME || "dentalsalt";
+  return process.env.NODE_ENV === "production" ? `/${repo}${clean}` : clean;
 }
 

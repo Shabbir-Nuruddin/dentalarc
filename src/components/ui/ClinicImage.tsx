@@ -15,14 +15,13 @@ export default function ClinicImage({ src, alt, className, ...props }: ClinicIma
   const handleError = () => {
     if (!failedOnce) {
       setFailedOnce(true);
-      // If the current src contains /dentalarc/, try root /
-      if (currentSrc.includes("/dentalarc/")) {
-        const fallback = currentSrc.replace("/dentalarc/", "/");
-        setCurrentSrc(fallback);
-      } else {
-        // If it doesn't contain /dentalarc/, try with /dentalarc/
-        const clean = src.startsWith("/") ? src : `/${src}`;
+      const clean = src.startsWith("/") ? src : `/${src}`;
+      if (currentSrc.includes("/dentalsalt/")) {
         setCurrentSrc(`/dentalarc${clean}`);
+      } else if (currentSrc.includes("/dentalarc/")) {
+        setCurrentSrc(clean);
+      } else {
+        setCurrentSrc(`/dentalsalt${clean}`);
       }
     }
   };
