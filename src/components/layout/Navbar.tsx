@@ -24,33 +24,33 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-3 sm:top-4 inset-x-0 mx-auto max-w-6xl z-50 px-3 sm:px-6 pointer-events-none">
+    <header className="fixed top-3 sm:top-4 inset-x-0 mx-auto w-full max-w-6xl z-50 px-3 sm:px-6 pointer-events-none">
       <div
-        className={`pointer-events-auto rounded-full border border-slate-900/15 transition-all duration-300 flex items-center justify-between px-4 sm:px-6 ${
+        className={`pointer-events-auto rounded-full border border-slate-900/15 transition-all duration-300 flex items-center justify-between pl-3.5 pr-2 sm:pl-5 sm:pr-2.5 ${
           scrolled
-            ? "bg-[#FAF9F6]/95 backdrop-blur-xl py-2.5 shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
-            : "bg-[#FAF9F6]/85 backdrop-blur-md py-3 shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
+            ? "bg-[#FAF9F6]/95 backdrop-blur-xl py-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
+            : "bg-[#FAF9F6]/85 backdrop-blur-md py-2.5 shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
         }`}
       >
         {/* Brand Logo & Location Indicator */}
         <Link
           href="/"
           onClick={handleNavClick}
-          className="flex items-center gap-2.5 hover:opacity-90 transition-opacity group shrink-0"
+          className="flex items-center gap-2 sm:gap-2.5 hover:opacity-90 transition-opacity group shrink-0 min-w-0"
         >
-          <DentalSaltLogo className="h-8 w-auto" />
-          <div className="flex flex-col">
-            <span className="font-black text-lg tracking-tight text-slate-900 leading-none">
+          <DentalSaltLogo className="h-7 sm:h-8 w-auto shrink-0" />
+          <div className="flex flex-col min-w-0">
+            <span className="font-black text-base sm:text-lg tracking-tight text-slate-900 leading-none truncate">
               The Dental <span className="font-light text-teal-700">Salt</span>
             </span>
-            <span className="text-[9px] font-mono uppercase font-bold tracking-widest text-slate-500 mt-0.5">
-              Sector 70 & Golf Course Ext. • Gurugram
+            <span className="text-[8px] sm:text-[9px] font-mono uppercase font-bold tracking-wider text-slate-500 mt-0.5 truncate">
+              <span className="hidden lg:inline">Sector 70 & Golf Course Ext. • </span>Gurugram
             </span>
           </div>
         </Link>
 
-        {/* Center Editorial Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-7 text-xs font-bold uppercase tracking-wider text-slate-700">
+        {/* Center Editorial Navigation Links (Desktop) */}
+        <nav className="hidden xl:flex items-center gap-6 text-xs font-bold uppercase tracking-wider text-slate-700 shrink-0">
           <Link
             href="/services"
             onClick={handleNavClick}
@@ -87,42 +87,54 @@ export default function Navbar() {
         </nav>
 
         {/* Right Action Stack: Phone & Booking Button */}
-        <div className="hidden sm:flex items-center gap-3 shrink-0">
-          {/* Working Hours Micro-Pill */}
-          <div className="hidden xl:flex items-center gap-1.5 text-[11px] font-mono text-emerald-800 bg-emerald-50 border border-emerald-200/80 px-2.5 py-1 rounded-full">
+        <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          {/* Working Hours Micro-Pill (Only on 2XL wide screens) */}
+          <div className="hidden 2xl:flex items-center gap-1.5 text-[11px] font-mono text-emerald-800 bg-emerald-50 border border-emerald-200/80 px-2.5 py-1 rounded-full">
             <Clock className="w-3 h-3 text-emerald-600" />
             <span>Open 7 Days till 8 PM</span>
           </div>
 
+          {/* Full Telephone Pill (Only on XL+ screens) */}
           <a
             href="tel:+919999385782"
             onClick={() => playTick(2200, 0.04)}
-            className="flex items-center gap-1.5 text-xs font-mono font-bold text-slate-800 hover:text-teal-700 px-3 py-1.5 rounded-full border border-slate-300 hover:border-slate-800 transition-all bg-white"
+            className="hidden xl:flex items-center gap-1.5 text-xs font-mono font-bold text-slate-800 hover:text-teal-700 px-3 py-1.5 rounded-full border border-slate-300 hover:border-slate-800 transition-all bg-white"
           >
             <Phone className="w-3.5 h-3.5 text-teal-700" />
             <span>+91 99993 85782</span>
           </a>
 
+          {/* Compact Telephone Icon Button (On MD to LG screens) */}
+          <a
+            href="tel:+919999385782"
+            onClick={() => playTick(2200, 0.04)}
+            aria-label="Call clinic at +91 99993 85782"
+            className="hidden sm:flex xl:hidden p-2 rounded-full border border-slate-300 hover:border-slate-800 bg-white text-teal-700 transition-all"
+          >
+            <Phone className="w-3.5 h-3.5" />
+          </a>
+
+          {/* Main Book Consultation Button - Always nested cleanly inside pill */}
           <Link
             href="/contact"
             onClick={() => playSnap(500, 0.06)}
-            className="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs px-5 py-2.5 rounded-full shadow-offset-sm hover:translate-x-0.5 hover:-translate-y-0.5 transition-all"
+            className="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs px-3.5 sm:px-4 py-2 rounded-full transition-all shrink-0 hover:opacity-95"
           >
             Book Consultation
           </Link>
-        </div>
 
-        {/* Mobile Hamburger Toggle */}
-        <button
-          onClick={() => {
-            playSnap(isOpen ? 360 : 480, 0.05);
-            setIsOpen(!isOpen);
-          }}
-          aria-label="Toggle navigation menu"
-          className="lg:hidden p-2 text-slate-800 hover:text-teal-700 transition-colors"
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+          {/* Mobile/Tablet Hamburger Toggle */}
+          <button
+            onClick={() => {
+              playSnap(isOpen ? 360 : 480, 0.05);
+              setIsOpen(!isOpen);
+            }}
+            aria-label="Toggle navigation menu"
+            className="xl:hidden p-1.5 text-slate-800 hover:text-teal-700 transition-colors"
+          >
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
